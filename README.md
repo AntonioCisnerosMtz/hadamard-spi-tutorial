@@ -101,6 +101,7 @@ Original tutorial code is released under the **BSD 3-Clause License**. Bundled T
 
 Citation metadata for the software are provided in `CITATION.cff`.
 
-Companion dataset v1.0.0: https://doi.org/10.5281/zenodo.22070080
+- Software v1.0.0: https://doi.org/10.5281/zenodo.22070980
+- Companion dataset v1.0.0: https://doi.org/10.5281/zenodo.22070080
 
-The software DOI and tutorial/article DOI will be added when those identifiers exist.
+The tutorial/article DOI will be added when it exists.
