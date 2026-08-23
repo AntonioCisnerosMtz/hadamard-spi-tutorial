@@ -91,8 +91,8 @@ This repository focuses on the real-data Hadamard SPI chain used by the tutorial
 
 ## Licensing
 
-Original tutorial code is prepared under the **BSD 3-Clause License**. Bundled TVAL3 beta 2.4 is third-party software and is **not covered by BSD-3-Clause**; it retains the preserved upstream unversioned GNU GPL notice. See `LICENSE_SCOPE.md`, `THIRD_PARTY_NOTICES.md`, and `LICENSES/` for exact scope and provenance. The companion experimental dataset is a separate record intended for **CC BY 4.0** release. Publication of the software and data remains contingent on confirmation that the applicable rights holder(s) are authorized to grant those licenses.
+Original tutorial code is released under the **BSD 3-Clause License**. Bundled TVAL3 beta 2.4 is third-party software and is **not covered by BSD-3-Clause**; it retains the preserved upstream unversioned GNU GPL notice. See `LICENSE_SCOPE.md`, `THIRD_PARTY_NOTICES.md`, and `LICENSES/` for exact scope and provenance. The companion experimental dataset is released separately under **CC BY 4.0**.
 
 ## Citation
 
-Citation metadata are provided in `CITATION.cff`. Repository, software DOI, dataset DOI, and tutorial DOI identifiers should be added only after those identifiers exist.
+Citation metadata are provided in `CITATION.cff`. Repository, software DOI, dataset DOI, and tutorial DOI identifiers will be added when those identifiers exist.
