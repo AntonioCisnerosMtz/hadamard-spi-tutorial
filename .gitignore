@@ -1,0 +1,25 @@
+# MATLAB generated files
+*.asv
+*.m~
+slprj/
+codegen/
+
+# Downloaded companion data payload
+matlab/section9_pipeline/raw/
+matlab/section9_pipeline/data/
+matlab/section9_pipeline/reference_results/
+matlab/section9_pipeline/reference_figures/
+
+# Reader-generated analysis and figure outputs
+matlab/section9_pipeline/results/
+matlab/section9_pipeline/figures/
+matlab/section9_pipeline/validation/
+
+# Optional M01 generated DMD patterns
+matlab/section9_pipeline/generated_patterns/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
