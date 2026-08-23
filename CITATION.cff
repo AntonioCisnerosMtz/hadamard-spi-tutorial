@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated tutorial and the archived software release."
+title: "Hadamard-based single-pixel imaging tutorial: MATLAB workflow"
+type: software
+authors:
+  - family-names: "Cisneros-Martínez"
+    given-names: "José Antonio"
+  - family-names: "Ramos-García"
+    given-names: "Rubén"
+version: "1.0.0"
+license: "BSD-3-Clause"
+keywords:
+  - single-pixel imaging
+  - Hadamard transform
+  - digital micromirror device
+  - computational imaging
+  - MATLAB
