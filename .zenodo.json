@@ -1,0 +1,34 @@
+{
+  "creators": [
+    {
+      "name": "Cisneros-Martínez, José Antonio",
+      "affiliation": "National Institute of Astrophysics, Optics and Electronics"
+    },
+    {
+      "name": "Ramos-García, Rubén",
+      "affiliation": "National Institute of Astrophysics, Optics and Electronics"
+    }
+  ],
+  "title": "Hadamard-based single-pixel imaging tutorial: MATLAB workflow",
+  "version": "1.0.0",
+  "access_right": "open",
+  "related_identifiers": [
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.22070080",
+      "relation": "isSupplementTo",
+      "resource_type": "dataset"
+    }
+  ],
+  "keywords": [
+    "single-pixel imaging",
+    "Hadamard transform",
+    "digital micromirror device",
+    "computational imaging",
+    "image reconstruction",
+    "TVAL3",
+    "MATLAB"
+  ],
+  "license": "bsd-3-clause",
+  "upload_type": "software",
+  "language": "eng"
+}
