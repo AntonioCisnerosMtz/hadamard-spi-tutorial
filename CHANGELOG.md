@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.1.0
 
 - Add the reader-facing Sections 7–8 MATLAB simulation workflow under
   `matlab/section7_8_simulation/`.
