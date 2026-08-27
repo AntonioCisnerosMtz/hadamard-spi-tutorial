@@ -171,7 +171,7 @@ The companion experimental dataset is intended for separate release under **CC B
 
 Citation metadata for the software are provided in `CITATION.cff`.
 
-- Software v1.0.0: https://doi.org/10.5281/zenodo.22070980
+- Software v1.1.0: https://doi.org/10.5281/zenodo.22133874
 - Reserved companion dataset DOI (publication pending): https://doi.org/10.5281/zenodo.22070080
 
 The tutorial/article DOI will be added when it exists.
