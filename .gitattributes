@@ -7,3 +7,9 @@
 *.json text eol=lf
 .gitignore text eol=lf
 .gitattributes text eol=lf
+
+# Preserve the upstream TVAL3 files byte-for-byte.
+# These archived third-party files use CRLF line endings; marking them -text
+# prevents Git for Windows from reporting a clean clone as modified.
+matlab/section9_pipeline/third_party/TVAL3_beta2.4/** -text
+matlab/section7_8_simulation/third_party/TVAL3_beta2.4/** -text

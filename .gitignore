@@ -4,13 +4,22 @@
 slprj/
 codegen/
 
-# Downloaded companion data payload
+# Sections 7-8 reader-installed external dependencies
+matlab/section7_8_simulation/external_dependencies/*
+!matlab/section7_8_simulation/external_dependencies/README.md
+
+# Sections 7-8 reader-generated outputs
+matlab/section7_8_simulation/results/*
+!matlab/section7_8_simulation/results/README.md
+matlab/section7_8_simulation/figures/simulation/
+
+# Downloaded companion data payload for Section 9
 matlab/section9_pipeline/raw/
 matlab/section9_pipeline/data/
 matlab/section9_pipeline/reference_results/
 matlab/section9_pipeline/reference_figures/
 
-# Reader-generated analysis and figure outputs
+# Section 9 reader-generated analysis and figure outputs
 matlab/section9_pipeline/results/
 matlab/section9_pipeline/figures/
 matlab/section9_pipeline/validation/
