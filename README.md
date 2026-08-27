@@ -6,7 +6,7 @@ This repository contains the reader-facing MATLAB workflows supporting
 The repository now provides two complementary numerical workflows:
 
 1. **Sections 7–8 — simulation and reconstruction comparison**
-2. **Section 9 — reconstruction of published experimental detector signals**
+2. **Section 9 — reconstruction of companion experimental detector signals**
 
 ## Start here
 
@@ -80,7 +80,7 @@ Detailed instructions are in:
 
 `matlab/section9_pipeline/README.md`
 
-## Published experimental signals
+## Companion experimental signals
 
 The companion dataset contains three positive/complementary detector-record pairs:
 
@@ -117,9 +117,9 @@ Windows 64-bit; this is a tested environment, not a minimum-version claim.
 
 ## Section 9 data installation
 
-Large experimental data are distributed separately as the companion Zenodo dataset:
+Large experimental data are intended for separate distribution through the companion Zenodo dataset:
 
-**Dataset v1.0.0 DOI:** https://doi.org/10.5281/zenodo.22070080
+**Reserved companion dataset DOI (publication pending):** https://doi.org/10.5281/zenodo.22070080
 
 Copy the **contents** of that dataset's `payload/` directory into:
 
@@ -165,13 +165,13 @@ Sections 7–8 simulation workflow.
 See `LICENSE_SCOPE.md`, `THIRD_PARTY_NOTICES.md`, and `LICENSES/` for exact
 scope and provenance.
 
-The companion experimental dataset is released separately under **CC BY 4.0**.
+The companion experimental dataset is intended for separate release under **CC BY 4.0**.
 
 ## Citation
 
 Citation metadata for the software are provided in `CITATION.cff`.
 
 - Software v1.0.0: https://doi.org/10.5281/zenodo.22070980
-- Companion dataset v1.0.0: https://doi.org/10.5281/zenodo.22070080
+- Reserved companion dataset DOI (publication pending): https://doi.org/10.5281/zenodo.22070080
 
 The tutorial/article DOI will be added when it exists.

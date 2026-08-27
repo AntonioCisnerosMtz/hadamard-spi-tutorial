@@ -10,18 +10,18 @@ fprintf('Hadamard SPI Sections 7-8 installation check\n');
 fprintf('============================================\n\n');
 
 %% Core MATLAB requirements
-coreReady = true;
+simulationCoreReady = true;
 
 if exist('imresize', 'file') ~= 2
     fprintf('Image Processing Toolbox / imresize: MISSING\n');
-    coreReady = false;
+    simulationCoreReady = false;
 else
     fprintf('Image Processing Toolbox / imresize: available\n');
 end
 
 if exist('ssim', 'file') ~= 2
     fprintf('Image Processing Toolbox / ssim: MISSING\n');
-    coreReady = false;
+    simulationCoreReady = false;
 else
     fprintf('Image Processing Toolbox / ssim: available\n');
 end
@@ -51,15 +51,14 @@ if frozenReady
     fprintf('Frozen tutorial results: available\n');
 else
     fprintf('Frozen tutorial results: MISSING\n');
-    coreReady = false;
 end
 
-%% TVAL3 is bundled with its license notice
+%% TVAL3 is bundled with its preserved upstream license notice
 tval3Ready = ...
     exist(fullfile(config.projectFolder, ...
         'third_party', 'TVAL3_beta2.4', 'Solver', 'TVAL3.m'), 'file') == 2 && ...
     exist(fullfile(config.projectFolder, ...
-        'third_party', 'TVAL3_beta2.4', 'COPYING_GPL-2.0.txt'), 'file') == 2;
+        'third_party', 'TVAL3_beta2.4', 'Solver', 'readme.txt'), 'file') == 2;
 
 if tval3Ready
     fprintf('TVAL3: available\n');
@@ -106,19 +105,19 @@ end
 
 fprintf('\n');
 
-if coreReady && frozenReady
+if frozenReady
     fprintf('Frozen tutorial reproduction: READY\n');
 else
     fprintf('Frozen tutorial reproduction: NOT READY\n');
 end
 
-if coreReady && tval3Ready && l1Ready && fdriReady
+if simulationCoreReady && tval3Ready && l1Ready && fdriReady
     fprintf('Full five-method simulation: READY\n');
 else
     fprintf('Full five-method simulation: NOT YET READY\n');
     fprintf('Run INSTALL_EXTERNAL_DEPENDENCIES.m for missing L1-Magic/FDRI packages.\n');
 end
 
-if coreReady && tval3Ready
+if simulationCoreReady && tval3Ready
     fprintf('Partial simulation (Direct + TVAL3, plus installed methods): READY\n');
 end

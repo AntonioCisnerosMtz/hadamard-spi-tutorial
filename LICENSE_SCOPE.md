@@ -6,17 +6,14 @@ This repository contains code under more than one license.
 
 Unless a file is located under a `third_party/` directory or explicitly
 states otherwise, the original code and documentation prepared for this
-repository are intended to be released under the **BSD 3-Clause License**.
+repository are released under the **BSD 3-Clause License**.
 
 The complete BSD 3-Clause text is provided in the root `LICENSE` file and in
 `LICENSES/BSD-3-Clause.txt`.
 
-The planned copyright notice for the author-owned portion is:
+The copyright notice for the author-owned portion is:
 
 > Copyright (c) 2026, José Antonio Cisneros-Martínez and Rubén Ramos-García
-
-Publication remains contingent on confirmation that the applicable rights
-holder(s) are authorized to grant this license.
 
 ## TVAL3 beta 2.4
 
@@ -53,7 +50,7 @@ Downloaded dependency files are excluded from version control.
 
 ## Companion data record
 
-The experimental detector-data record is a separate publication and is
-released under **Creative Commons Attribution 4.0 International (CC BY 4.0)**.
-Its license notice is contained in that record rather than in this software
-repository.
+The experimental detector-data record is a separate publication candidate and
+is intended for release under **Creative Commons Attribution 4.0 International
+(CC BY 4.0)**. Its license notice is contained in that record rather than in
+this software repository.

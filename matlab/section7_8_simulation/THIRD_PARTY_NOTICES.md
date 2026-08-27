@@ -2,13 +2,20 @@
 
 ## TVAL3 beta 2.4
 
-The reader package includes the MATLAB TVAL3 solver files required by S06,
-together with the preserved GPL-2.0 notice under:
+The reader package includes the MATLAB TVAL3 solver files required by S06.
 
-`third_party/TVAL3_beta2.4/COPYING_GPL-2.0.txt`
+The authoritative upstream licensing statement is preserved in:
+
+`third_party/TVAL3_beta2.4/Solver/readme.txt`
+
+That upstream statement refers to the GNU General Public License without
+specifying a GPL version. A copy of the GNU GPL version 2 license text is also
+included at `third_party/TVAL3_beta2.4/COPYING_GPL-2.0.txt` for reference; its
+presence does not relabel TVAL3 as GPL-2.0-only.
 
 TVAL3 is third-party software and is not covered by the license used for the
-tutorial's original MATLAB code.
+tutorial's original MATLAB code. See the repository-level
+`LICENSES/TVAL3_LICENSE_INFO.md` for the license treatment and provenance.
 
 ## L1-Magic
 
