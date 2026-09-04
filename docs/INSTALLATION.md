@@ -1,51 +1,93 @@
 # Installation
 
-## Software
+The repository contains two reader workflows with different installation needs.
 
-1. Clone or extract the software repository.
-2. Obtain the companion experimental-data record.
-3. Copy the **contents** of the data record's `payload/` folder into `matlab/section9_pipeline/`.
-4. Open MATLAB with `matlab/section9_pipeline/` as the current folder.
-5. Run `CHECK_INSTALLATION.m`.
+## Sections 7–8 — simulation
 
-No private project directory is required. TVAL3 beta 2.4 source needed by M05 is already bundled under `third_party/`.
-
-## MATLAB requirements
-
-The clean-room reference test used MATLAB R2026a Update 4 on Windows 64-bit. The minimum supported MATLAB release has not been established.
-
-Required toolboxes/functions used by the reader workflow:
-
-- Image Processing Toolbox: `imresize`, `ssim`
-- Signal Processing Toolbox: `findpeaks`
-
-## Verify the data installation
-
-The following folders/files should exist before running M02→M06:
+Open MATLAB in:
 
 ```text
+matlab/section7_8_simulation/
+```
+
+For frozen tutorial-result reproduction or a new Direct + TVAL3 simulation, no external solver download is required. Run:
+
+```matlab
+CHECK_INSTALLATION
+```
+
+For the complete five-method simulation, download the repository ZIPs for:
+
+- L1-Magic: https://github.com/scgt/l1magic
+- FDRI-single-pixel-imaging: https://github.com/KMCzajkowski/FDRI-single-pixel-imaging
+
+On each repository page choose **Code → Download ZIP** and keep the downloads as ZIP files. Then run:
+
+```matlab
+INSTALL_EXTERNAL_DEPENDENCIES
+CHECK_INSTALLATION
+```
+
+Do not manually extract the L1-Magic/FDRI ZIP files; the installer asks you to select them and installs the required files locally.
+
+See `matlab/section7_8_simulation/README.md` for the three reader paths.
+
+## Section 9 — experimental data
+
+The experimental detector records are distributed separately from the software.
+
+1. Obtain and extract the companion experimental dataset.
+2. Copy the **contents** of its `payload/` directory into `matlab/section9_pipeline/`.
+3. Do not leave an extra `payload/` directory level.
+4. Open MATLAB with `matlab/section9_pipeline/` as the current folder.
+5. Run `CHECK_INSTALLATION`.
+6. Continue only when the final line reports `Installation ready.`
+
+The following paths should exist before running M02–M06:
+
+```text
+raw/paw_print/
 raw/USAF/
 raw/logo/
-raw/paw_print/
 data/pattern_manifest.csv
 reference_results/paw_print/
 reference_figures/paw_print/
 ```
 
-`reference_results/` and `reference_figures/` are read-only checkpoints supplied by the dataset. The pipeline writes newly generated outputs to `results/` and `figures/`, so reproduction does not overwrite the reference copies.
+The reference folders are read-only checkpoints supplied by the companion dataset. Reader-generated outputs go to `results/` and `figures/`.
 
-## Select and run a dataset
-
-Open `RUN_SECTION9_ANALYSIS.m`. Near the top, edit only:
+To reproduce the manuscript case, keep:
 
 ```matlab
-selectedDataset = "paw_print";  % "paw_print", "USAF", or "logo"
+selectedDataset = "paw_print";
+generateFigures = true;
 ```
 
-Then press **Run** in `RUN_SECTION9_ANALYSIS.m`. That launcher is the normal reader entry point: it passes the selected dataset explicitly to M02--M06 and, when enabled, to the single figure exporter. `section9_config.m` resolves paths internally and normally does not need to be edited.
+in `RUN_SECTION9_ANALYSIS.m`, then run:
+
+```matlab
+RUN_SECTION9_ANALYSIS
+```
 
 M01 is optional pre-acquisition pattern generation and is not part of the reconstruction quick start.
 
-## Figure generation
+See `matlab/section9_pipeline/README.md` for the complete step-by-step procedure and expected outputs.
 
-`RUN_SECTION9_ANALYSIS.m` uses the same `selectedDataset` for analysis and figure export. Keep `generateFigures = true` to create `figures/<dataset>/`.
+## MATLAB requirements
+
+### Sections 7–8
+
+- MATLAB
+- Image Processing Toolbox (`imresize`, `ssim`)
+- bundled TVAL3 beta 2.4
+- L1-Magic and FDRI only for the full five-method run
+
+### Section 9
+
+- MATLAB
+- Image Processing Toolbox (`imresize`, `ssim`)
+- Signal Processing Toolbox (`findpeaks`)
+- bundled TVAL3 beta 2.4
+- companion experimental dataset
+
+The reader workflows have been clean-room exercised with MATLAB R2026a on Windows 64-bit. This is a tested environment, not a minimum-version claim.

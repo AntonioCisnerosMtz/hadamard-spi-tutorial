@@ -8,7 +8,7 @@ The TVAL3 beta 2.4 distribution preserved for this tutorial contains the followi
 
 The preserved upstream notice does not name a GPL version.
 
-## How this release candidate represents that notice
+## How this release represents that notice
 
 This repository does not relabel the TVAL3 files as GPL-2.0-only, GPL-3.0-only, or another version-specific license. The original unversioned notice remains authoritative for those files.
 

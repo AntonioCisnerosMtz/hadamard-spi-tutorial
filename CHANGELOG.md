@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.2.0
+
+- Standardize the manuscript TVAL3 configuration to isotropic TV (`TVnorm=2`) with the complete fixed option set used for the post-peer-review reconstructions.
+- Record TVAL3 continuation/iteration stopping information and relative measurement residuals without describing limit-terminated runs as having converged to the outer tolerance.
+- Replace the Sections 7–8 frozen numerical reference data with the validated post-peer-review full-rerun results used for the revised Figures 13–16.
+- Preserve the Section 9 detector-to-bucket and measurement-vector workflow; M02–M04 are unchanged from v1.1.0.
+- Keep the companion experimental dataset as a separate publication object. The dataset DOI remains reserved until explicit publication.
+- Preserve historical v1.1.0 unchanged; this release is a new software version rather than a rewrite of the historical release.
+- Expand reader onboarding so the GitHub landing page and module READMEs give explicit commands, dependency/download links, Section 9 payload-installation checks, expected outputs, and lightweight orientation figures.
+
 ## 1.1.0
 
 - Add the reader-facing Sections 7–8 MATLAB simulation workflow under

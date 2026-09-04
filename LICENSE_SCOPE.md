@@ -50,7 +50,7 @@ Downloaded dependency files are excluded from version control.
 
 ## Companion data record
 
-The experimental detector-data record is a separate publication candidate and
+The experimental detector-data record is a separate publication object and
 is intended for release under **Creative Commons Attribution 4.0 International
 (CC BY 4.0)**. Its license notice is contained in that record rather than in
 this software repository.

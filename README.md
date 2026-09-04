@@ -3,38 +3,67 @@
 This repository contains the reader-facing MATLAB workflows supporting
 **“Hadamard-Based Single-Pixel Imaging: From Detector Signals to Image Reconstruction.”**
 
-The repository now provides two complementary numerical workflows:
+> **Software v1.2.0.** This release contains the post-peer-review TVAL3 standardization, revised frozen Sections 7–8 results, and reader-tested instructions for both numerical workflows. Historical release `v1.1.0` remains unchanged.
+
+The software provides two complementary workflows:
 
 1. **Sections 7–8 — simulation and reconstruction comparison**
-2. **Section 9 — reconstruction of companion experimental detector signals**
+2. **Section 9 — processing companion experimental detector signals**
 
-## Start here
+## Start here — which command should I run?
 
-### Sections 7–8: simulation and reconstruction comparison
+| I want to... | Start in | Commands | Extra download |
+|---|---|---|---|
+| View/reproduce the validated Sections 7–8 tutorial figures | `matlab/section7_8_simulation/` | `CHECK_INSTALLATION`, then `REPRODUCE_TUTORIAL_RESULTS` | None |
+| Run a new Sections 7–8 Direct + TVAL3 simulation | `matlab/section7_8_simulation/` | `CHECK_INSTALLATION`, then `RUN_SIMULATION` | None |
+| Run the complete five-method Sections 7–8 simulation | `matlab/section7_8_simulation/` | `INSTALL_EXTERNAL_DEPENDENCIES`, `CHECK_INSTALLATION`, then `RUN_SIMULATION` | L1-Magic + FDRI ZIPs |
+| Reprocess the Section 9 experimental data | `matlab/section9_pipeline/` | install dataset payload, `CHECK_INSTALLATION`, then `RUN_SECTION9_ANALYSIS` | Companion experimental dataset |
 
-Directory:
+For the detailed, step-by-step instructions, see:
 
-```text
-matlab/section7_8_simulation/
-```
+- [Sections 7–8 simulation guide](matlab/section7_8_simulation/README.md)
+- [Section 9 experimental-data guide](matlab/section9_pipeline/README.md)
 
-Use this workflow to:
+## Sections 7–8 — simulation
 
-- view or regenerate the tutorial-result reproductions for Figures 13–16;
-- rerun the Hadamard simulation with MATLAB `cameraman.tif`;
-- select a different image and run the same simulation;
-- compare Direct, FDRI, DCT-l1, TVAL3, and TV-QC;
-- compute RMSE, NRMSE, PSNR, SSIM, and absolute-error maps.
+### A. Reproduce the validated tutorial results
 
-For immediate reproduction from the supplied frozen numerical results:
+From `matlab/section7_8_simulation/`, run:
 
 ```matlab
+CHECK_INSTALLATION
 REPRODUCE_TUTORIAL_RESULTS
 ```
 
-No external reconstruction solver is executed in this mode.
+This reads the supplied frozen numerical results and regenerates the reader-facing reproductions of Figures 13–16. **No reconstruction solver is executed.** Outputs are written to:
 
-To rerun the simulation:
+```text
+matlab/section7_8_simulation/figures/tutorial_reproduction/
+```
+
+A representative expected output is shown below.
+
+<img src="docs/assets/sections7_8_expected_output.png" alt="Representative Sections 7–8 reconstruction comparison" width="900">
+
+### B. Run a new Direct + TVAL3 simulation
+
+Direct and TVAL3 are available without L1-Magic or FDRI:
+
+```matlab
+CHECK_INSTALLATION
+RUN_SIMULATION
+```
+
+If L1-Magic or FDRI is absent, its corresponding stage is skipped. Direct and TVAL3 still run, and the quality-evaluation stage evaluates only the methods produced in that clean run.
+
+### C. Run the complete five-method simulation
+
+The complete workflow uses Direct, FDRI, DCT-l1, TVAL3, and TV-QC. TVAL3 is bundled. Download the other two repositories as ZIP files:
+
+- **L1-Magic:** https://github.com/scgt/l1magic
+- **FDRI-single-pixel-imaging:** https://github.com/KMCzajkowski/FDRI-single-pixel-imaging
+
+On each GitHub page choose **Code → Download ZIP**. Keep those two downloads as ZIP files; **do not extract them manually**. Then run:
 
 ```matlab
 INSTALL_EXTERNAL_DEPENDENCIES
@@ -42,55 +71,118 @@ CHECK_INSTALLATION
 RUN_SIMULATION
 ```
 
-L1-Magic and FDRI are not bundled. Their public repository ZIPs are selected
-locally by `INSTALL_EXTERNAL_DEPENDENCIES.m`. TVAL3 beta 2.4 is preserved
-inside the module with its upstream license notice.
+`INSTALL_EXTERNAL_DEPENDENCIES` asks you to select the downloaded ZIP files and installs the required files locally under `external_dependencies/`.
 
-Detailed instructions are in:
+For the full run, `CHECK_INSTALLATION` should report:
 
-`matlab/section7_8_simulation/README.md`
+```text
+TVAL3: available
+L1-Magic: available
+FDRI: available
+Full five-method simulation: READY
+```
 
-### Section 9: experimental detector-signal reconstruction
+A `NOT YET READY` line is a status message for that particular path, not a failure of the paths whose requirements are already available.
 
-Directory:
+New-run outputs are kept separate from the frozen tutorial results:
+
+```text
+matlab/section7_8_simulation/results/
+matlab/section7_8_simulation/figures/simulation/
+```
+
+To use the tutorial image, keep `imageMode = "tutorial"` at the top of `RUN_SIMULATION.m`. Set `imageMode = "choose"` to select another image interactively.
+
+See the [Sections 7–8 simulation guide](matlab/section7_8_simulation/README.md) for sampling-ratio settings, expected outputs, and solver notes.
+
+## Section 9 — experimental detector-signal reconstruction
+
+The experimental data are **not bundled inside the software package**. They are a separate companion dataset so that software versioning and experimental-data provenance remain distinct.
+
+**Reserved companion dataset DOI:** `10.5281/zenodo.22070080` — dataset publication pending.
+
+### 1. Install the dataset payload
+
+Download and extract the companion dataset. Copy the **contents of its `payload/` directory**, not the `payload` directory itself, into:
 
 ```text
 matlab/section9_pipeline/
 ```
 
-The normal reader entry point is:
+After copying, these paths should exist directly inside `section9_pipeline/`:
+
+```text
+raw/paw_print/
+raw/USAF/
+raw/logo/
+data/pattern_manifest.csv
+reference_results/paw_print/
+reference_figures/paw_print/
+```
+
+If you instead see `matlab/section9_pipeline/payload/raw/...`, the payload is nested one level too deep.
+
+### 2. Check the installation
+
+Open MATLAB with `matlab/section9_pipeline/` as the current folder and run:
+
+```matlab
+CHECK_INSTALLATION
+```
+
+Continue only after the final line reports:
+
+```text
+Installation ready.
+```
+
+### 3. Run the manuscript example
+
+In the **User settings** section of `RUN_SECTION9_ANALYSIS.m`, keep:
+
+```matlab
+selectedDataset = "paw_print";
+generateFigures = true;
+```
+
+Then run:
 
 ```matlab
 RUN_SECTION9_ANALYSIS
 ```
 
-Readers normally change only `selectedDataset` and, if desired,
-`generateFigures` in the **User settings** section.
+`paw_print` is the Section 9 manuscript case. After that run succeeds, you can repeat the same workflow with `selectedDataset = "USAF"` or `selectedDataset = "logo"` as additional reader examples.
 
-The workflow follows the experimental chain described in the tutorial:
+The analysis follows the tutorial chain shown below.
 
-1. optional pre-acquisition generation of GCS+S Hadamard DMD masks (`M01`);
-2. raw detector signal → one bucket value per displayed mask (`M02`);
-3. formation of `yDiff`, `yRef`, and `yAvg` (`M03`);
-4. Direct Hadamard reconstruction (`M04`);
-5. TVAL3 reconstruction (`M05`);
-6. image-quality evaluation using the declared internal reference (`M06`).
+<img src="docs/assets/section9_workflow.png" alt="Section 9 experimental processing workflow" width="900">
 
-Detailed instructions are in:
+A successful `paw_print` run processes 16,384 positive and 16,384 complementary bucket values, evaluates the 5:5:100% sampling grid, produces Direct and TVAL3 reconstructions, computes image-quality metrics, and exports the S9_01–S9_05 figure family.
 
-`matlab/section9_pipeline/README.md`
+Expected numerical outputs are written to:
 
-## Companion experimental signals
+```text
+results/paw_print/bucket_measurements.mat
+results/paw_print/measurement_vectors.mat
+results/paw_print/direct_reconstructions.mat
+results/paw_print/tval3_reconstructions.mat
+results/paw_print/quality_metrics.csv
+results/paw_print/quality_evaluation.mat
+```
 
-The companion dataset contains three positive/complementary detector-record pairs:
+Expected figure outputs are written under `figures/paw_print/` as:
 
-- `paw_print` — the worked experimental example used in Section 9 and the
-  dataset with frozen reference results;
-- `USAF` — an additional experimental signal for the same processing chain;
-- `logo` — an additional experimental signal for the same processing chain.
+```text
+S9_01_detector_and_measurement_vectors.[png|pdf|eps]
+S9_02_ydiff_direct_vs_tval3_partial.[png|pdf|eps]
+S9_03_yref_direct_vs_tval3_partial.[png|pdf|eps]
+S9_04_yavg_direct_vs_tval3_partial.[png|pdf|eps]
+S9_05_all_paths_quality_nrmse_ssim.[png|pdf|eps]
+```
 
-`paw_print` is the manuscript case. `USAF` and `logo` are additional
-reader-executable examples rather than manuscript reference cases.
+The installed reference checkpoints remain separate and are never overwritten by the normal reader workflow.
+
+See the [Section 9 experimental-data guide](matlab/section9_pipeline/README.md) for the full clean-room procedure and troubleshooting notes.
 
 ## Requirements
 
@@ -98,12 +190,9 @@ reader-executable examples rather than manuscript reference cases.
 
 - MATLAB
 - Image Processing Toolbox (`imresize`, `ssim`)
-- public L1-Magic ZIP for DCT-l1 and TV-QC
-- public FDRI ZIP for FDRI
-- bundled TVAL3 beta 2.4 for TVAL3
-
-The validated workflow was exercised on MATLAB R2026a. Timing and iterative
-solver trajectories can vary with hardware and MATLAB update level.
+- bundled TVAL3 beta 2.4
+- L1-Magic ZIP only for DCT-l1 and TV-QC in the complete five-method run
+- FDRI ZIP only for FDRI in the complete five-method run
 
 ### Section 9
 
@@ -111,45 +200,20 @@ solver trajectories can vary with hardware and MATLAB update level.
 - Image Processing Toolbox (`imresize`, `ssim`)
 - Signal Processing Toolbox (`findpeaks`)
 - bundled TVAL3 beta 2.4
+- separately distributed companion experimental dataset
 
-The Section 9 clean-room workflow was tested with MATLAB R2026a Update 4 on
-Windows 64-bit; this is a tested environment, not a minimum-version claim.
-
-## Section 9 data installation
-
-Large experimental data are intended for separate distribution through the companion Zenodo dataset:
-
-**Reserved companion dataset DOI (publication pending):** https://doi.org/10.5281/zenodo.22070080
-
-Copy the **contents** of that dataset's `payload/` directory into:
-
-```text
-matlab/section9_pipeline/
-```
-
-After copying, the pipeline directory should contain:
-
-```text
-raw/USAF/
-raw/logo/
-raw/paw_print/
-data/pattern_manifest.csv
-reference_results/paw_print/
-reference_figures/paw_print/
-```
-
-Generated Section 9 files remain separate under `results/<dataset>/`,
-`figures/<dataset>/`, and optional `generated_patterns/`.
+The post-peer-review reader workflows have been clean-room exercised with MATLAB R2026a on Windows 64-bit. This is a tested environment, not a minimum-version claim. Timing and iterative-solver trajectories can vary with hardware and MATLAB update level.
 
 ## Reproducibility structure
 
-The two workflows intentionally separate:
+The repository intentionally separates:
 
 - frozen tutorial-result reproduction;
 - reader-generated simulation results;
 - experimental raw-data processing;
 - third-party solver code;
-- reader-installed external solver dependencies.
+- reader-installed external solver dependencies;
+- the separately versioned experimental dataset.
 
 This keeps manuscript reference results distinct from newly generated outputs.
 
@@ -157,13 +221,7 @@ This keeps manuscript reference results distinct from newly generated outputs.
 
 Original tutorial code is released under the **BSD 3-Clause License**.
 
-Bundled TVAL3 beta 2.4 is third-party software and is not covered by the BSD
-3-Clause License. L1-Magic and FDRI are not redistributed by this repository;
-readers install those dependencies from their public repositories for the
-Sections 7–8 simulation workflow.
-
-See `LICENSE_SCOPE.md`, `THIRD_PARTY_NOTICES.md`, and `LICENSES/` for exact
-scope and provenance.
+Bundled TVAL3 beta 2.4 is third-party software and is not covered by the BSD 3-Clause License. L1-Magic and FDRI are not redistributed by this repository. See `LICENSE_SCOPE.md`, `THIRD_PARTY_NOTICES.md`, and `LICENSES/` for exact scope and provenance.
 
 The companion experimental dataset is intended for separate release under **CC BY 4.0**.
 
@@ -171,7 +229,8 @@ The companion experimental dataset is intended for separate release under **CC B
 
 Citation metadata for the software are provided in `CITATION.cff`.
 
-- Software v1.1.0: https://doi.org/10.5281/zenodo.22133874
-- Reserved companion dataset DOI (publication pending): https://doi.org/10.5281/zenodo.22070080
+- Historical software v1.1.0 DOI: `10.5281/zenodo.22133874`
+- Historical software v1.0.0 DOI: `10.5281/zenodo.22070980`
+- Reserved companion dataset DOI: `10.5281/zenodo.22070080` — publication pending
 
-The tutorial/article DOI will be added when it exists.
+The Zenodo DOI for software v1.2.0 is assigned by the archive after the software release is deposited, so it may postdate this source snapshot. The tutorial/article DOI will be added when it exists.

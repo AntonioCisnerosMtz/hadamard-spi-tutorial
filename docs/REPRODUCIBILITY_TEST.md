@@ -1,48 +1,55 @@
 # Clean-room reproducibility validation
 
-## Validated manuscript case
+## Post-peer-review reader validation
 
-The `paw_print` M02→M06 workflow was executed from a clean software/data copy without any additional project folders.
+The v1.2.0 workflows were exercised from fresh extracted software copies rather than from the development project tree.
 
-## Tested environment
+### Sections 7–8
 
-- Test date: 2026-08-20
-- MATLAB: R2026a Update 4
-- MATLAB build: 26.1.0.3312084
-- Platform: Windows 64-bit (`PCWIN64`)
-- Required MathWorks functionality used successfully:
-  - Image Processing Toolbox (`imresize`, `ssim`)
-  - Signal Processing Toolbox (`findpeaks`)
-- TVAL3: preserved beta 2.4 MATLAB source bundled with the repository
-- Historical TVAL3 platform-specific MEX binaries: not required
-
-This establishes a tested environment, not the minimum supported MATLAB release.
-
-## Commands
-
-From `matlab/section9_pipeline/`, set `selectedDataset = "paw_print"` and leave `generateFigures = true` in `RUN_SECTION9_ANALYSIS.m`, then run:
+The author clean-room validation completed both reader modes:
 
 ```matlab
+CHECK_INSTALLATION
+REPRODUCE_TUTORIAL_RESULTS
+```
+
+and, after installing the public L1-Magic and FDRI ZIP dependencies:
+
+```matlab
+RUN_SIMULATION
+```
+
+The frozen tutorial figures reproduced without executing external solvers. The new five-method run completed Direct, FDRI, DCT-l1, TVAL3, and TV-QC, followed by quality evaluation.
+
+### Section 9 manuscript case
+
+On 2026-09-03, the author installed the separate companion dataset payload into a fresh RC3 software copy and ran:
+
+```matlab
+CHECK_INSTALLATION
 RUN_SECTION9_ANALYSIS
 ```
 
-For manual figure-only regeneration after M02--M06 outputs already exist, use `generate_section9_figures("paw_print")`.
+with `selectedDataset = "paw_print"` and MATLAB R2026a on Windows 64-bit.
 
-## Regression result
+The clean-room run completed the full reader chain with these structural results:
 
-Comparison with the frozen files now distributed under `reference_results/paw_print/` showed:
+- positive buckets: 16,384;
+- complementary buckets: 16,384;
+- sampling grid: 5:5:100%;
+- Direct reconstructions: 60;
+- TVAL3 reconstructions: 60;
+- evaluated reconstructions: 120;
+- S9_01–S9_05 figure families exported successfully.
 
-- bucket measurements: numerically/structurally identical;
-- measurement vectors: numerically/structurally identical;
-- Direct reconstructions: numerically/structurally identical;
-- quality evaluation: numerically/structurally identical;
-- `quality_metrics.csv`: byte-identical;
-- TVAL3 reconstructions and solver data: identical except for expected `elapsedSeconds` runtime fields.
+The TVAL3 console output included the expected low-sampling iteration-limit diagnostics and completed all 20 sampling ratios. No workflow error occurred.
 
-All five Section 9 figure groups were regenerated successfully from the current exporters.
+The final v1.2.0 numerical content is unchanged from the clean-room validated RC3. The RC4 assembly step changed only reader documentation/onboarding and documentation preview assets; numerical code, solver configuration, frozen Sections 7–8 results, and Section 9 analysis code were unchanged.
 
-## Additional-signal functional test
+## Historical Section 9 validation
 
-The public multi-dataset workflow was also run for `USAF` and `logo`. Both selections completed M02--M06 and produced the five S9-style figure groups in their own dataset folders. This verifies reader-facing dataset routing and execution; it does **not** promote either signal to a manuscript reference case or create article claims from their results.
+Earlier clean-room validation of the Section 9 reader workflow used MATLAB R2026a Update 4 on Windows 64-bit. The `USAF` and `logo` selections also completed the same dataset-routing workflow in functional testing. Those additional signals are reader examples, not manuscript reference cases.
 
-A subsequent `paw_print` run produced a `quality_metrics.csv` that remained byte-identical to the frozen checkpoint distributed with the data record.
+## Reproducibility interpretation
+
+Exact wall-clock times are hardware dependent. MAT files can also contain creation metadata and solver timing fields, so byte identity is not required for regenerated MAT files. Numerical equivalence, expected dimensions/counts, declared solver settings, and successful generation of the documented outputs are the relevant reproducibility checks.

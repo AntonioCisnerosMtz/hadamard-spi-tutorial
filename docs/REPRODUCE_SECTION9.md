@@ -1,22 +1,33 @@
-# Reproduce the experimental workflow
+# Clean-room reproduction of the Section 9 experimental workflow
 
-## 1. Prepare a clean working copy
+This guide gives the minimal sequence for a new reader to reproduce the `paw_print` manuscript workflow from a clean software copy and the separately distributed companion dataset.
 
-Use a fresh copy of the software repository and the companion data record. No private project folders are required.
+## 1. Prepare clean software and data copies
+
+Use a fresh copy of the software package and extract the companion experimental dataset separately.
+
+The software package does **not** contain the large raw detector records.
 
 ## 2. Install the data payload
 
-Copy everything inside the companion dataset's `payload/` directory into:
+Copy everything **inside** the companion dataset's `payload/` directory into:
 
-`matlab/section9_pipeline/`
+```text
+matlab/section9_pipeline/
+```
 
-The three raw input pairs are then located under:
+After copying, verify that these paths exist directly under `section9_pipeline/`:
 
-- `raw/paw_print/`
-- `raw/USAF/`
-- `raw/logo/`
+```text
+raw/paw_print/
+raw/USAF/
+raw/logo/
+data/pattern_manifest.csv
+reference_results/paw_print/
+reference_figures/paw_print/
+```
 
-All three use the published `data/pattern_manifest.csv` in the reader workflow. Immutable reference outputs are supplied only for `paw_print` under `reference_results/paw_print/` and `reference_figures/paw_print/`.
+If you see `section9_pipeline/payload/raw/...`, the data are nested one level too deep.
 
 ## 3. Check the installation
 
@@ -26,47 +37,89 @@ From `matlab/section9_pipeline/`, run:
 CHECK_INSTALLATION
 ```
 
-Resolve any `FAIL` entries before reconstruction.
+Resolve any `FAIL` entry before continuing. The final line must report:
 
-## 4. Select a dataset in the launcher
+```text
+Installation ready.
+```
 
-Open `RUN_SECTION9_ANALYSIS.m` and edit the single user-setting line:
+## 4. Select the manuscript dataset
+
+In the **User settings** section of `RUN_SECTION9_ANALYSIS.m`, keep:
 
 ```matlab
 selectedDataset = "paw_print";
+generateFigures = true;
 ```
 
-Valid values are `"paw_print"`, `"USAF"`, and `"logo"`. `paw_print` is the Section 9 manuscript case; `USAF` and `logo` are additional experimental signals.
+Valid dataset values are `"paw_print"`, `"USAF"`, and `"logo"`. `paw_print` is the Section 9 manuscript case.
 
-## 5. Execute M02 → M06
+## 5. Run the complete analysis
 
-Press **Run** in `RUN_SECTION9_ANALYSIS.m`. The launcher passes `selectedDataset` explicitly to M02–M06, then performs bucket extraction, measurement-vector formation, Direct reconstruction, TVAL3 reconstruction, and quality evaluation.
-
-Outputs are written to `results/<selectedDataset>/`. For example, `paw_print` produces:
-
-- `results/paw_print/bucket_measurements.mat`
-- `results/paw_print/measurement_vectors.mat`
-- `results/paw_print/direct_reconstructions.mat`
-- `results/paw_print/tval3_reconstructions.mat`
-- `results/paw_print/quality_metrics.csv`
-- `results/paw_print/quality_evaluation.mat`
-
-The immutable dataset checkpoints remain under `reference_results/paw_print/`.
-
-## 6. Generate figures
-
-With the default `generateFigures = true`, `RUN_SECTION9_ANALYSIS.m` generates figures automatically for the selected dataset. To regenerate them manually without rerunning M02–M06, call, for example:
+Run:
 
 ```matlab
-generate_section9_figures("logo")
+RUN_SECTION9_ANALYSIS
 ```
 
-There is one public exporter: `generate_section9_figures.m`. `RUN_SECTION9_ANALYSIS.m` passes the same `selectedDataset` to it automatically when `generateFigures = true`. It writes to `figures/<dataset>/`. The `paw_print` output reproduces the manuscript figure family; USAF and logo use the same layouts as reader-facing diagnostic figures. Immutable `reference_figures/paw_print/` are never overwritten.
+The launcher executes M02→M06 automatically: bucket extraction, measurement-vector formation, Direct reconstruction, TVAL3 reconstruction, quality evaluation, and figure export.
 
-## 7. Reference-output policy
+A successful `paw_print` run should structurally report:
 
-The tutorial declares `Direct + yDiff + 100%` for `paw_print` as an **internal reference**, not ground truth. Frozen `paw_print` results provide regression checkpoints for the manuscript example.
+- 16,384 positive and 16,384 complementary bucket values;
+- the 5:5:100% sampling grid;
+- 60 Direct reconstructions;
+- 60 TVAL3 reconstructions;
+- 120 reconstruction/metric evaluations;
+- successful S9_01–S9_05 figure export.
 
-`USAF` and `logo` are intentionally distributed without frozen manuscript-reference results; their purpose is to let readers run the same pipeline on additional experimental signals.
+Exact timing values and iterative-solver trajectories are not expected to be identical across computers.
 
-Regenerated MATLAB files need not be byte-identical because MAT files can store creation metadata and TVAL3 records elapsed runtime. Numerical equivalence is the relevant scientific criterion.
+## 6. Expected numerical outputs
+
+```text
+results/paw_print/bucket_measurements.mat
+results/paw_print/measurement_vectors.mat
+results/paw_print/direct_reconstructions.mat
+results/paw_print/tval3_reconstructions.mat
+results/paw_print/quality_metrics.csv
+results/paw_print/quality_evaluation.mat
+```
+
+## 7. Expected figure outputs
+
+```text
+figures/paw_print/S9_01_detector_and_measurement_vectors.[png|pdf|eps]
+figures/paw_print/S9_02_ydiff_direct_vs_tval3_partial.[png|pdf|eps]
+figures/paw_print/S9_03_yref_direct_vs_tval3_partial.[png|pdf|eps]
+figures/paw_print/S9_04_yavg_direct_vs_tval3_partial.[png|pdf|eps]
+figures/paw_print/S9_05_all_paths_quality_nrmse_ssim.[png|pdf|eps]
+```
+
+Installed checkpoints remain under `reference_results/paw_print/` and `reference_figures/paw_print/`; the normal workflow does not overwrite them.
+
+## 8. Additional experimental signals
+
+After `paw_print` succeeds, the same reader workflow can be applied by setting:
+
+```matlab
+selectedDataset = "USAF";
+```
+
+or:
+
+```matlab
+selectedDataset = "logo";
+```
+
+These are additional reader examples rather than manuscript reference cases.
+
+## 9. Figure-only regeneration
+
+If M02–M06 outputs already exist, regenerate figures without rerunning the analysis with, for example:
+
+```matlab
+generate_section9_figures("paw_print")
+```
+
+See `matlab/section9_pipeline/README.md` for the full reader guide and solver/reference-output notes.

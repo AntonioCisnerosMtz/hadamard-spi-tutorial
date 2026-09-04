@@ -1,18 +1,9 @@
-# Frozen tutorial results
+# Frozen revised tutorial results
 
-These files reproduce the numerical results shown in Sections 7-8 without
-rerunning the external reconstruction solvers.
+These files reproduce the numerical content of the revised Sections 7–8 results without rerunning external reconstruction solvers.
 
-Use:
+Run `REPRODUCE_TUTORIAL_RESULTS.m`.
 
-`REPRODUCE_TUTORIAL_RESULTS.m`
+The frozen package contains the reference image and selected validated full-rerun reconstructions, the revised metric table used for Figure 15, and the revised timing ranges used for Figure 14.
 
-The supplied files contain:
-
-- the reference image and selected frozen reconstructions;
-- the tutorial quality-metric table;
-- the reconstruction-time ranges used by the reader-facing Figure 14
-  reproduction.
-
-Frozen data are intentionally separate from `results/`, which stores outputs
-from the reader's own simulation runs.
+The historical v1.1.0 frozen results are not overwritten in the public record; they remain available from the immutable historical release.

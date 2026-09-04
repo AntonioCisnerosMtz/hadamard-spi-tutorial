@@ -1,0 +1,10 @@
+STAGE 1D CONTROLLED TVAL3 REGENERATION
+S7-S8 solves: 20
+Section 9 solves: 60
+Total solves: 80
+measurement_vectors_sha256: 85c82a3934b413adaf7800adf461b4fa0f4e88713ab9b3bca748781dc643da10
+S7-S8 termination causes:
+  maximum_continuation_updates: 20
+Section 9 termination causes:
+  maximum_continuation_updates: 56
+  maximum_iteration_limit: 4
