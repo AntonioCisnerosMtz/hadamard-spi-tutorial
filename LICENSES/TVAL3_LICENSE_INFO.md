@@ -23,7 +23,7 @@ Official GNU license information:
 
 Including these license texts does not change the upstream TVAL3 notice or transfer copyright in TVAL3 to the tutorial authors.
 
-## Provenance
+## Source archive
 
 - Preserved archive: `TVAL3_beta2.4.zip`
 - SHA-256: `d6ed82335ec1f2265cfca0fe09d84c23cca9894a0490abb871d7a595ad1083c4`

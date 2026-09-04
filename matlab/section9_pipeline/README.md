@@ -1,8 +1,8 @@
-# Hadamard SPI — Section 9 experimental workflow
+# Hadamard SPI — Section 9 experimental data
 
-This is the reader-facing workflow for processing the experimental detector records used in Section 9 of the tutorial.
+These scripts process the experimental detector records used in Section 9 of the tutorial.
 
-The normal entry point is `RUN_SECTION9_ANALYSIS.m`. A clean reader run should not require private project folders or manual calls to M02–M06.
+The normal entry point is `RUN_SECTION9_ANALYSIS.m`. It runs M02–M06 automatically.
 
 ## Quick start
 
@@ -13,7 +13,7 @@ The normal entry point is `RUN_SECTION9_ANALYSIS.m`. A clean reader run should n
 5. Run `RUN_SECTION9_ANALYSIS`.
 6. Inspect `results/paw_print/` and `figures/paw_print/`.
 
-`paw_print` is the manuscript reference case. `USAF` and `logo` are additional reader-executable examples that use the same pipeline.
+`paw_print` is the manuscript reference case. `USAF` and `logo` are additional examples that use the same processing steps.
 
 ## 1. Install the companion dataset
 
@@ -79,7 +79,7 @@ If any line reports `FAIL`, correct that item before running the analysis. The m
 
 ## 3. Select the dataset
 
-Near the top of `RUN_SECTION9_ANALYSIS.m`, edit only the **User settings** when making a normal reader run:
+Near the top of `RUN_SECTION9_ANALYSIS.m`, edit only the **User settings** to select an example:
 
 ```matlab
 selectedDataset = "paw_print";  % "paw_print", "USAF", or "logo"
@@ -102,7 +102,7 @@ Run:
 RUN_SECTION9_ANALYSIS
 ```
 
-The launcher executes the reader analysis in order:
+The launcher runs the analysis in order:
 
 ```text
 M02  raw detector records -> positive/complementary bucket measurements
@@ -115,9 +115,9 @@ M06  RMSE / NRMSE / PSNR / SSIM evaluation
 
 `M01_generate_gcss_dmd_patterns.m` is an optional **pre-acquisition** pattern generator. It is not required to reprocess the supplied experimental detector records.
 
-The workflow corresponds to the processing chain shown below.
+The processing steps are shown below.
 
-<img src="../../docs/assets/section9_workflow.png" alt="Section 9 experimental processing workflow" width="900">
+<img src="../../docs/assets/section9_workflow.png" alt="Section 9 data processing and reconstruction steps" width="900">
 
 ## 5. What a successful `paw_print` run should report
 
@@ -137,7 +137,7 @@ Evaluated reconstructions: 120
 Figure export complete
 ```
 
-TVAL3 may report iteration-limit messages for individual low-sampling cases. Those messages are solver stopping diagnostics and are not, by themselves, a workflow failure. The software records the actual stopping behavior rather than describing every returned image as tolerance-converged.
+TVAL3 may report iteration-limit messages for individual low-sampling cases. Those messages are solver stopping diagnostics and are not, by themselves, an analysis failure. The software records the actual stopping behavior rather than describing every returned image as tolerance-converged.
 
 ## 6. Expected outputs
 
@@ -175,7 +175,7 @@ reference_results/paw_print/
 reference_figures/paw_print/
 ```
 
-The normal M02–M06 workflow writes only to `results/<dataset>/` and `figures/<dataset>/`; it does not overwrite the installed reference checkpoints.
+The M02–M06 analysis writes only to `results/<dataset>/` and `figures/<dataset>/`; it does not overwrite the installed reference checkpoints.
 
 The tutorial uses the 100% Direct `yDiff` reconstruction as an **internal reference**, not as physical ground truth.
 
@@ -198,13 +198,13 @@ generate_section9_figures("logo")
 
 ## 9. Reproducibility note for TVAL3
 
-The post-peer-review software uses the fixed TVAL3 option set declared directly in `M05_reconstruct_tval3_images.m`, including isotropic TV (`TVnorm=2`) and nonnegativity. Its `tol=1e-6` value is the TVAL3 outer relative-change stopping control, not a measurement-residual tolerance.
+The software uses the fixed TVAL3 option set declared directly in `M05_reconstruct_tval3_images.m`, including isotropic TV (`TVnorm=2`) and nonnegativity. Its `tol=1e-6` value is the TVAL3 outer relative-change stopping control, not a measurement-residual tolerance.
 
-Readers normally do not need to edit those solver options to reproduce the tutorial workflow.
+Readers normally do not need to edit those solver options to reproduce the tutorial results.
 
 ## Related documentation
 
 - [Repository start page](../../README.md)
-- [Clean-room Section 9 reproduction guide](../../docs/REPRODUCE_SECTION9.md)
+- [Section 9 reproduction guide](../../docs/REPRODUCE_SECTION9.md)
 - [Data formats](../../docs/DATA_FORMAT.md)
 - [Dependencies](../../docs/DEPENDENCIES.md)

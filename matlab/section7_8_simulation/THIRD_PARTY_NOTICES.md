@@ -15,7 +15,7 @@ presence does not relabel TVAL3 as GPL-2.0-only.
 
 TVAL3 is third-party software and is not covered by the license used for the
 tutorial's original MATLAB code. See the repository-level
-`LICENSES/TVAL3_LICENSE_INFO.md` for the license treatment and provenance.
+`LICENSES/TVAL3_LICENSE_INFO.md` for the license details and source.
 
 ## L1-Magic
 

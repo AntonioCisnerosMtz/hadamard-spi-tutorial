@@ -8,7 +8,7 @@ The companion data record provides three dataset folders under `raw/`:
 - `raw/USAF/`
 - `raw/logo/`
 
-Each folder contains exactly one positive record matching `*_pos_*_F.txt` and one complementary record matching `*_neg_*_F.txt`. The files are numeric detector-voltage samples stored as text. The pipeline preserves the pairing and acquisition order.
+Each folder contains exactly one positive record matching `*_pos_*_F.txt` and one complementary record matching `*_neg_*_F.txt`. The files are numeric detector-voltage samples stored as text. The scripts preserve the pairing and acquisition order.
 
 Do not infer undocumented acquisition settings solely from the historical filename grammar. For the manuscript `paw_print` case, use `metadata/acquisition_paw_print.json` in the companion dataset as the authoritative published acquisition metadata. `metadata/processing_USAF.json` and `metadata/processing_logo.json` document the released MATLAB processing parameters for those reader datasets without asserting undocumented acquisition hardware details.
 
@@ -35,8 +35,8 @@ The companion dataset stores validated manuscript checkpoints separately from re
 - `reference_results/paw_print/` — frozen bucket values, measurement vectors, reconstructions, and metrics;
 - `reference_figures/paw_print/` — frozen PNG/PDF manuscript-style figure exports.
 
-The M02→M06 workflow never writes into these folders.
+The M02→M06 scripts never write into these folders.
 
 ## Figure exporters
 
-`generate_section9_figures.m` is the single public figure exporter. It accepts `paw_print`, `USAF`, or `logo`, reads `results/<dataset>/`, and writes S9_01–S9_05-style outputs to `figures/<dataset>/`. For `paw_print`, these reproduce the manuscript figure family. For USAF and logo, the same layouts are provided as reader-facing diagnostic figures.
+`generate_section9_figures.m` is the single public figure exporter. It accepts `paw_print`, `USAF`, or `logo`, reads `results/<dataset>/`, and writes S9_01–S9_05-style outputs to `figures/<dataset>/`. For `paw_print`, these reproduce the manuscript figure family. For USAF and logo, the same layouts are provided as diagnostic figures.

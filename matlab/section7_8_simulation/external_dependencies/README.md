@@ -16,7 +16,7 @@ On each GitHub page choose **Code → Download ZIP**.
 
 Keep the downloaded files as ZIPs. **Do not extract them manually.**
 
-## Install them into the reader workflow
+## Install the dependencies
 
 From `matlab/section7_8_simulation/` run:
 

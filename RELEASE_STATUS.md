@@ -1,11 +1,11 @@
-# Release status — v1.2.0
+# Release status — v1.2.1
 
-This source package is the **author-approved software v1.2.0 release payload** prepared after the post-peer-review validation cycle.
+Documentation update. Simplified the installation and usage instructions. No scientific code, parameters, data, or reference results were changed.
 
-The numerical workflows, frozen Sections 7–8 reference results, Section 9 processing code, reader onboarding, licensing notices, and internal checksums were reviewed before this package was assembled.
+The MATLAB files, TVAL3 settings, saved numerical results, and figures are unchanged from v1.2.0. The numerical check files are now stored in `validation/`.
 
-The historical public release `v1.1.0` is a separate immutable release and must not be retargeted, rewritten, or replaced by v1.2.0.
+The v1.2.0 and v1.1.0 tags and commits remain unchanged.
 
-At the time this source package was assembled, the companion experimental dataset remained a separate publication object with reserved DOI `10.5281/zenodo.22070080`. Its publication status is independent of the software release.
+The companion experimental dataset is distributed separately. Its reserved DOI is `10.5281/zenodo.22070080`, and publication is pending.
 
-The Zenodo archive DOI for software v1.2.0 is not embedded here because it is assigned by the archive after deposition. This omission does not change the software version represented by this package.
+This documentation update does not publish or modify any Zenodo record or experimental dataset. `.zenodo.json` contains software metadata for this source version only.

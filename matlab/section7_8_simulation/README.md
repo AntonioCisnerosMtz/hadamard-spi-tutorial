@@ -1,4 +1,4 @@
-# Hadamard SPI — Sections 7–8 reader simulation
+# Hadamard SPI — Sections 7–8 simulation
 
 This module separates **reproduction of the validated tutorial results** from **new simulations**. Choose the path that matches what you want to do.
 
@@ -19,7 +19,7 @@ CHECK_INSTALLATION
 REPRODUCE_TUTORIAL_RESULTS
 ```
 
-`REPRODUCE_TUTORIAL_RESULTS` reads the supplied frozen revised numerical results. **No reconstruction solver is executed in this mode.** It creates reader-facing reproductions of Figures 13–16 under:
+`REPRODUCE_TUTORIAL_RESULTS` reads the saved numerical results. **No reconstruction solver is executed in this mode.** It creates reproductions of Figures 13–16 under:
 
 ```text
 figures/tutorial_reproduction/
@@ -40,7 +40,7 @@ CHECK_INSTALLATION
 RUN_SIMULATION
 ```
 
-If external dependencies are absent, the workflow reports them as unavailable and skips the corresponding stages:
+If external dependencies are absent, the scripts report them as unavailable and skips the corresponding stages:
 
 - missing FDRI → S04 is skipped;
 - missing L1-Magic → S05 and S07 are skipped;
@@ -61,7 +61,7 @@ figures/simulation/
 
 ## C. Run a new five-method simulation
 
-The five-method workflow uses Direct, FDRI, DCT-l1, TVAL3, and TV-QC. TVAL3 is already supplied under `third_party/`. L1-Magic and FDRI must be downloaded by the reader.
+The five-method simulation uses Direct, FDRI, DCT-l1, TVAL3, and TV-QC. TVAL3 is already supplied under `third_party/`. L1-Magic and FDRI must be downloaded by the reader.
 
 Download the repository ZIPs from:
 
@@ -117,7 +117,7 @@ Change it to:
 imageMode = "choose";
 ```
 
-and MATLAB opens a file-selection dialog. Reader-selected images are converted to 8-bit grayscale before the same 128 × 128 Hadamard SPI workflow is applied.
+and MATLAB opens a file-selection dialog. Selected images are converted to 8-bit grayscale before the same 128 × 128 Hadamard SPI simulation is run.
 
 ## Choose the sampling percentages
 
@@ -152,7 +152,7 @@ The code favors readable, sequential implementations that mirror the tutorial eq
 
 ## What `CHECK_INSTALLATION` means
 
-`CHECK_INSTALLATION` does not run a reconstruction. It reports which reader workflows are ready:
+`CHECK_INSTALLATION` does not run a reconstruction. It reports which options are ready:
 
 - `Frozen tutorial reproduction: READY` means Path A can be run.
 - `Partial simulation (Direct + TVAL3, plus installed methods): READY` means Path B can be run.
@@ -170,11 +170,11 @@ The code favors readable, sequential implementations that mirror the tutorial eq
 
 The solver settings shown in S05–S07 reproduce the revised tutorial benchmark and are not universal tuning recommendations. TVAL3 uses isotropic TV (`TVnorm=2`), a nonnegative image constraint, and the complete fixed option set declared in S06. Its `tol` value is an outer relative-change stopping control, not a measurement-residual tolerance.
 
-For a different image, an iterative solver may reach its maximum iteration limit before satisfying its internal stopping criterion. The reader-facing S06 reports the actual limit or stopping condition. The reconstructed image is still returned and evaluated, but the message indicates that the benchmark settings may need retuning for the new image.
+For a different image, an iterative solver may reach its maximum iteration limit before satisfying its internal stopping criterion. S06 reports the actual limit or stopping condition. The reconstructed image is still returned and evaluated, but the message indicates that the benchmark settings may need retuning for the new image.
 
 ## Included tutorial figures
 
-The repository includes the visually reviewed reader-facing reproductions generated from the frozen tutorial data:
+The repository includes the reproductions generated from the frozen tutorial data:
 
 ```text
 figures/tutorial_reproduction/
@@ -194,7 +194,7 @@ This directory is intended to live at:
 matlab/section7_8_simulation/
 ```
 
-The normal reader entry points are:
+The main commands are:
 
 ```text
 REPRODUCE_TUTORIAL_RESULTS.m

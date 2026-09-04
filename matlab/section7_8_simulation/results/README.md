@@ -1,6 +1,6 @@
 # Generated simulation results
 
-`RUN_SIMULATION.m` creates the current reader-run outputs in this directory,
+`RUN_SIMULATION.m` creates the outputs from the current run in this directory,
 including reconstruction MAT files, the generated quality-metric CSV, absolute
 error maps, and iterative-solver logs.
 

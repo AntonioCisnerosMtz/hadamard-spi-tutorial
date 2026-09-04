@@ -1,6 +1,6 @@
 # Figures
 
-The four reviewed tutorial-result reproductions are included under:
+The four tutorial-result reproductions are included under:
 
 ```text
 tutorial_reproduction/
@@ -12,7 +12,7 @@ They can be regenerated at any time with:
 REPRODUCE_TUTORIAL_RESULTS
 ```
 
-A new reader simulation writes generated figures under:
+A new simulation writes generated figures under:
 
 ```text
 simulation/

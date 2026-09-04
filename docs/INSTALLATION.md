@@ -1,6 +1,6 @@
 # Installation
 
-The repository contains two reader workflows with different installation needs.
+The two sections have different installation requirements.
 
 ## Sections 7–8 — simulation
 
@@ -30,7 +30,7 @@ CHECK_INSTALLATION
 
 Do not manually extract the L1-Magic/FDRI ZIP files; the installer asks you to select them and installs the required files locally.
 
-See `matlab/section7_8_simulation/README.md` for the three reader paths.
+See `matlab/section7_8_simulation/README.md` for the three simulation options.
 
 ## Section 9 — experimental data
 
@@ -90,4 +90,4 @@ See `matlab/section9_pipeline/README.md` for the complete step-by-step procedure
 - bundled TVAL3 beta 2.4
 - companion experimental dataset
 
-The reader workflows have been clean-room exercised with MATLAB R2026a on Windows 64-bit. This is a tested environment, not a minimum-version claim.
+The scripts were tested on a fresh installation with MATLAB R2026a on Windows 64-bit. This is a tested environment, not a minimum-version claim.

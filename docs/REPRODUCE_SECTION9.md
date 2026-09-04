@@ -1,6 +1,6 @@
-# Clean-room reproduction of the Section 9 experimental workflow
+# Reproduce Section 9 from a fresh installation
 
-This guide gives the minimal sequence for a new reader to reproduce the `paw_print` manuscript workflow from a clean software copy and the separately distributed companion dataset.
+Follow these steps to reproduce the `paw_print` tutorial example using a fresh software copy and the separate experimental dataset.
 
 ## 1. Prepare clean software and data copies
 
@@ -96,11 +96,11 @@ figures/paw_print/S9_04_yavg_direct_vs_tval3_partial.[png|pdf|eps]
 figures/paw_print/S9_05_all_paths_quality_nrmse_ssim.[png|pdf|eps]
 ```
 
-Installed checkpoints remain under `reference_results/paw_print/` and `reference_figures/paw_print/`; the normal workflow does not overwrite them.
+Installed checkpoints remain under `reference_results/paw_print/` and `reference_figures/paw_print/`; the analysis does not overwrite them.
 
 ## 8. Additional experimental signals
 
-After `paw_print` succeeds, the same reader workflow can be applied by setting:
+After `paw_print` succeeds, repeat the analysis by setting:
 
 ```matlab
 selectedDataset = "USAF";
@@ -112,7 +112,7 @@ or:
 selectedDataset = "logo";
 ```
 
-These are additional reader examples rather than manuscript reference cases.
+These are additional examples.
 
 ## 9. Figure-only regeneration
 

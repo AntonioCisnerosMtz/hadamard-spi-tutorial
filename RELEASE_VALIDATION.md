@@ -1,68 +1,45 @@
-# v1.2.0 release validation record
+# Release checks — v1.2.1
 
-## Final verdict
+v1.2.1 changes documentation only. The comparison with v1.2.0 checks every MATLAB file, saved numerical result, solver option record, and figure byte for byte. Moving the numerical check files to `validation/` does not change their contents.
 
-**SOFTWARE v1.2.0 RELEASE PAYLOAD: AUTHOR-APPROVED**
+The numerical tests below were recorded for v1.2.0. They were not rerun for this documentation update.
 
-The scientific and reader-facing validation gates required for the software release were completed before final package assembly.
+## Sections 7–8
 
-## Scientific validation
-
-### Sections 7–8 frozen-result reproduction — PASS
-
-A clean extracted software copy completed:
+A fresh software installation completed:
 
 ```matlab
 CHECK_INSTALLATION
 REPRODUCE_TUTORIAL_RESULTS
 ```
 
-The frozen tutorial results reproduced without executing external reconstruction solvers.
+The saved tutorial results reproduced without running reconstruction solvers.
 
-### Sections 7–8 complete five-method rerun — PASS
+After installing L1-Magic and FDRI from their public ZIP downloads, `RUN_SIMULATION` completed Direct, FDRI, DCT-l1, TVAL3, and TV-QC at 5%, 20%, and 50% sampling. Image-quality evaluation also completed. TVAL3 used isotropic TV and reported its stopping conditions.
 
-After installing the public L1-Magic and FDRI ZIP dependencies, a clean run of:
+## Section 9
 
-```matlab
-RUN_SIMULATION
-```
-
-completed Direct, FDRI, DCT-l1, TVAL3, and TV-QC for the default 5%, 20%, and 50% grid, followed by image-quality evaluation. TVAL3 reported the approved isotropic configuration and actual stopping behavior.
-
-### Section 9 `paw_print` clean-room workflow — PASS
-
-After installing the separate companion dataset payload, a clean software copy completed:
+After installing the separate dataset into a fresh software copy, these commands completed with `selectedDataset = "paw_print"`:
 
 ```matlab
 CHECK_INSTALLATION
 RUN_SECTION9_ANALYSIS
 ```
 
-with `selectedDataset = "paw_print"`.
+The run produced:
 
-The workflow produced 16,384 positive and 16,384 complementary bucket values, the 5:5:100% sampling grid, 60 Direct reconstructions, 60 TVAL3 reconstructions, 120 quality evaluations, and S9_01–S9_05 figure families.
+- 16,384 positive and 16,384 complementary bucket values;
+- the 5:5:100% sampling grid;
+- 60 Direct and 60 TVAL3 reconstructions;
+- 120 image-quality evaluations;
+- the S9_01–S9_05 figures.
 
-### Reader onboarding — PASS
+`USAF` and `logo` also completed earlier functional tests. They are additional examples.
 
-The root README and module documentation provide separate reader paths for:
+## Documentation checks
 
-- frozen Sections 7–8 reproduction;
-- a new Direct + TVAL3 simulation;
-- the complete five-method simulation with L1-Magic and FDRI;
-- Section 9 experimental-data installation and processing.
+The main README and section guides describe saved-result reproduction, Direct + TVAL3, all five methods, dependency installation, image selection, and Section 9 dataset installation. They include commands, expected installation messages, and output folders.
 
-L1-Magic and FDRI download links, ZIP-installation instructions, Section 9 payload placement, installation checks, expected outputs, and orientation figures are documented.
+See [Numerical checks](validation/README.md) for the saved diagnostic files and [Reproducibility tests](docs/REPRODUCIBILITY_TEST.md) for details of the earlier tests.
 
-## Validation provenance
-
-The scientific reruns were completed on the RC2/RC3 validation chain. RC4 changed documentation/onboarding and documentation preview assets only. The final v1.2.0 transformation from RC4 changes release-state documentation and checksums only; numerical MATLAB code, solver configuration, frozen numerical results, and post-peer-review validation data remain unchanged.
-
-Additional `USAF` and `logo` datasets previously completed the common reader workflow in functional testing. They are additional reader examples rather than manuscript regression cases.
-
-## Historical release protection
-
-Historical `v1.1.0` remains a separate release. The v1.2.0 publication process must create a new commit/tag/release and must not move, recreate, or overwrite the v1.1.0 tag.
-
-## Companion dataset
-
-The companion experimental dataset is versioned and published separately. At software-package assembly its reserved DOI was `10.5281/zenodo.22070080` and publication remained pending. Dataset publication requires its own explicit author approval.
+The v1.2.0 and v1.1.0 tags and commits remain unchanged. Zenodo records and the experimental dataset are not modified.

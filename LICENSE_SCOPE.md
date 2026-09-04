@@ -17,7 +17,7 @@ The copyright notice for the author-owned portion is:
 
 ## TVAL3 beta 2.4
 
-TVAL3 beta 2.4 is preserved as third-party software for both reader workflows:
+TVAL3 beta 2.4 is preserved as third-party software for both sections:
 
 ```text
 matlab/section7_8_simulation/third_party/TVAL3_beta2.4/
@@ -35,13 +35,13 @@ TVAL3 authors did not state, the repository keeps the upstream notice and the
 published GPL version 1, version 2, and version 3 texts under `LICENSES/`.
 
 See `LICENSES/TVAL3_LICENSE_INFO.md` and `THIRD_PARTY_NOTICES.md` for
-provenance and scope.
+the source and license scope.
 
 ## L1-Magic and FDRI
 
 L1-Magic and FDRI are **not redistributed** by this repository.
 
-For the Sections 7–8 workflow, readers download those projects from their
+For the Sections 7–8 simulation, readers download those projects from their
 public repositories and install the required runtime files locally through:
 
 `matlab/section7_8_simulation/INSTALL_EXTERNAL_DEPENDENCIES.m`
@@ -50,7 +50,7 @@ Downloaded dependency files are excluded from version control.
 
 ## Companion data record
 
-The experimental detector-data record is a separate publication object and
+The experimental detector-data record is a separate download and
 is intended for release under **Creative Commons Attribution 4.0 International
 (CC BY 4.0)**. Its license notice is contained in that record rather than in
 this software repository.

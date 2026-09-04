@@ -2,13 +2,12 @@
 
 ## TVAL3 beta 2.4
 
-The Sections 7–8 simulation workflow and the Section 9 experimental workflow
+The Sections 7–8 simulations and Section 9 analysis
 use **TVAL3 beta 2.4**, originally by Chengbo Li and Yin Zhang (Rice
 University), with Wotao Yin also identified in the preserved solver
 documentation.
 
-Each MATLAB workflow keeps a module-local copy of the same preserved solver
-source so the workflows remain independently runnable:
+Each section includes its own copy of the same solver source so it can run independently:
 
 ```text
 matlab/section7_8_simulation/third_party/TVAL3_beta2.4/
@@ -41,7 +40,7 @@ applies the documented narrow MATLAB compatibility patch for TV-QC.
 
 ## FDRI
 
-FDRI is used by the Sections 7–8 simulation workflow.
+FDRI is used by the Sections 7–8 simulation.
 
 It is **not bundled** in this repository. The reader downloads the public FDRI
 repository ZIP and supplies it to the same dependency installer.
