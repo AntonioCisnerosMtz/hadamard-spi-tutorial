@@ -110,11 +110,10 @@ for i = 1:N
     u = uList(i);
     v = vList(i);
 
-    % P_{u,v} is the outer product of the corresponding one-dimensional
-    % Hadamard vectors. This is the same signed pattern used in the tutorial.
-    hu = HnSeq(u, :).';
-    hv = HnSeq(v, :);
-    Puv = hu * hv;
+    % Generate P_{u,v} using the same convention as Eq. (9).
+    hu = HnSeq(:, u);
+    hv = HnSeq(:, v);
+    Puv = hu * hv.';
 
     % A binary DMD cannot display -1. Split the signed pattern into the
     % positive mask P_i^(+) and complementary mask P_i^(-).
