@@ -6,7 +6,7 @@ function M04_reconstruct_direct_images(selectedDataset)
 %   2. set every unmeasured Hadamard coefficient to zero;
 %   3. place the N coefficients in the n x n grid C_M;
 %   4. evaluate
-%          X_direct = (H_n^T * C_M * H_n) / N.
+%          X_direct = (H_n * C_M * H_n^T) / N.
 %
 % No normalization, clipping, filtering, hot-pixel removal, or display
 % scaling is applied to the numerical reconstruction.
@@ -98,8 +98,8 @@ for r = 1:numRatios
         C_M(gcssLinearIndex) = y_zf;
 
         % Section 7 separable inverse:
-        %       X_direct = (H_n^T * C_M * H_n) / N
-        Xdirect = (Hseq.' * C_M * Hseq) / N;
+        %       X_direct = (H_n * C_M * H_n^T) / N
+        Xdirect = (Hseq * C_M * Hseq.') / N;
 
         assert(all(isfinite(Xdirect), 'all'), ...
             'Direct reconstruction contains non-finite values.');
