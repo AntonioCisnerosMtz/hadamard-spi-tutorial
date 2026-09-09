@@ -8,7 +8,7 @@
 %   2. visit the two-dimensional (u,v) coordinates in GCS+S zigzag order;
 %   3. generate the signed pattern P_{u,v};
 %   4. split P_{u,v} into positive and complementary binary masks;
-%   5. resize and center each mask in the DMD frame;
+%   5. expand and center each mask in the DMD frame;
 %   6. save the frames as 1-bit PNG files and record their acquisition order.
 %
 % Edit only the parameters in the next section, and then press Run.
@@ -20,8 +20,10 @@ clc;
 % These settings define a NEW pre-acquisition pattern set. They do not alter
 % the published experimental data or its installed pattern manifest.
 n = 128;                     % Logical pattern size: n x n
-activeRegionSize = 880;      % Square active region in DMD pixels
+q = 7;                       % DMD micromirrors per logical pixel
 dmdResolution = [1080 1920]; % Full DMD frame: [rows columns]
+
+activeRegionSize = n * q;
 
 % Examples:
 %   '%d.png'                  -> 1.png, 2.png, 3.png
@@ -46,8 +48,8 @@ if n < 2 || mod(log2(n), 1) ~= 0
     error('n must be a power of two: 2, 4, 8, 16, 32, 64, 128, ...');
 end
 
-if activeRegionSize < 1 || mod(activeRegionSize, 1) ~= 0
-    error('activeRegionSize must be a positive integer.');
+if q < 1 || mod(q, 1) ~= 0
+    error('q must be a positive integer.');
 end
 
 if numel(dmdResolution) ~= 2 || any(dmdResolution < 1) || ...
@@ -57,11 +59,9 @@ end
 
 if activeRegionSize > dmdResolution(1) || ...
         activeRegionSize > dmdResolution(2)
-    error('The active region does not fit inside the DMD frame.');
-end
-
-if exist('imresize', 'file') ~= 2
-    error('This script requires imresize from the Image Processing Toolbox.');
+    maxQ = floor(min(dmdResolution) / n);
+    error(['The selected n and q produce an active region that does not ' ...
+        'fit inside the DMD frame. Maximum q for this n is %d.'], maxQ);
 end
 
 %% Number of signed patterns
@@ -129,11 +129,11 @@ for i = 1:N
             'The first complementary mask is not all zero.');
     end
 
-    % Resize each logical mask and center it in the full DMD frame.
+    % Expand each logical pixel to a q-by-q micromirror block and center the result.
     positiveFrame = make_centered_dmd_frame( ...
-        PiPositive, activeRegionSize, dmdResolution);
+        PiPositive, q, dmdResolution);
     complementaryFrame = make_centered_dmd_frame( ...
-        PiComplementary, activeRegionSize, dmdResolution);
+        PiComplementary, q, dmdResolution);
 
     % Save both frames as 1-bit PNG files.
     positiveName = sprintf(positiveNameFormat, i);
@@ -183,6 +183,7 @@ end
 
 fprintf(settingsFile, 'ordering = GCS+S\n');
 fprintf(settingsFile, 'n = %d\n', n);
+fprintf(settingsFile, 'q = %d\n', q);
 fprintf(settingsFile, 'logical_pattern_size = %d x %d\n', n, n);
 fprintf(settingsFile, 'N = %d\n', N);
 fprintf(settingsFile, 'dmd_resolution = %d x %d\n', dmdRows, dmdColumns);
