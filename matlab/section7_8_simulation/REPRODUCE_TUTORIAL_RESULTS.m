@@ -255,6 +255,6 @@ exportgraphics(fig, ...
 close(fig);
 
 
-fprintf('\nFrozen tutorial results reproduced.\n');
+fprintf('\nReference tutorial results reproduced.\n');
 fprintf('No external solver was executed.\n');
 fprintf('Output folder: %s\n\n', figureFolder);
