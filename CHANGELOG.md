@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.3.0
+
+Scientific-code and reproducibility update for the tutorial companion software.
+
+- Align Section 9 Hadamard pattern generation and Direct reconstruction with the conventions used in the tutorial equations.
+- Replace resize-based DMD mapping with uniform integer `q x q` micromirror blocks for newly generated patterns.
+- Improve Section 9 figure accessibility with redundant line-style and marker encoding.
+- Clarify mixed-license scope: original tutorial code and documentation use BSD 3-Clause, while bundled TVAL3 beta 2.4 remains third-party software under its upstream GNU GPL notice.
+- Add machine-readable per-file license scope through `REUSE.toml`.
+- Replace internal release-control material with reader-facing reproducibility documentation and reference diagnostics.
+- Document the official L1-Magic source, the current FDRI source path, dependency installation, expected outputs, and the Section 9 worked-example workflow.
+- Keep the companion experimental dataset as a separate download. Its DOI remains reserved until the dataset is explicitly published.
+
 ## 1.2.1
 
 Documentation update. Simplified the installation and usage instructions. No scientific code, parameters, data, or reference results were changed.

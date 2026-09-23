@@ -47,8 +47,9 @@ the source and license treatment.
 
 L1-Magic and FDRI are **not redistributed** by this repository.
 
-For the Sections 7–8 simulation, readers download those projects from their
-public repositories and install the required runtime files locally through:
+For the Sections 7–8 simulation, readers obtain L1-Magic from its official
+project site (or optional mirror) and FDRI from the repository referenced by
+its institutional project page, then install the required runtime files locally through:
 
 `matlab/section7_8_simulation/INSTALL_EXTERNAL_DEPENDENCIES.m`
 

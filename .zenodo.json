@@ -10,7 +10,8 @@
     }
   ],
   "title": "Hadamard-based single-pixel imaging tutorial: MATLAB scripts",
-  "version": "1.2.1",
+  "description": "MATLAB companion software for the tutorial. Original tutorial code and documentation are distributed under the BSD 3-Clause License. Bundled TVAL3 beta 2.4 is third-party software and retains its upstream GNU GPL licensing notice. File-level license scope is documented in LICENSE_SCOPE.md, THIRD_PARTY_NOTICES.md, docs/licensing/TVAL3_LICENSE_INFO.md, and REUSE.toml.",
+  "version": "1.3.0",
   "access_right": "open",
   "related_identifiers": [
     {
@@ -28,7 +29,7 @@
     "TVAL3",
     "MATLAB"
   ],
-  "license": "bsd-3-clause",
+  "license": "other-open",
   "upload_type": "software",
   "language": "eng"
 }

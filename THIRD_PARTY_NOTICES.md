@@ -38,8 +38,8 @@ See `docs/licensing/TVAL3_LICENSE_INFO.md` for the license treatment.
 
 L1-Magic is used by the Sections 7–8 DCT-l1 and TV-QC routes.
 
-It is **not redistributed** in this repository. The reader downloads a public
-repository ZIP and supplies it to:
+It is **not redistributed** in this repository. The reader downloads L1-Magic
+from its official project site (or optional mirror) and supplies the ZIP to:
 
 `matlab/section7_8_simulation/INSTALL_EXTERNAL_DEPENDENCIES.m`
 
@@ -50,8 +50,9 @@ applies the documented narrow MATLAB compatibility patch for TV-QC.
 
 FDRI is used by the Sections 7–8 simulation.
 
-It is **not bundled** in this repository. The reader downloads the public FDRI
-repository ZIP and supplies it to the same dependency installer.
+It is **not bundled** in this repository. The reader downloads the FDRI ZIP
+from the repository referenced by the institutional FDRI project page and
+supplies it to the same dependency installer.
 
 The tutorial creates only a thin local MATLAB wrapper needed to call the
 upstream `private/fdri.m` file; the FDRI algorithm itself remains upstream
