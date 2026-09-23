@@ -18,7 +18,7 @@ clc;
 
 %% Pattern-generation settings
 % These settings define a NEW pre-acquisition pattern set. They do not alter
-% the published experimental data or its installed pattern manifest.
+% the installed companion experimental data or its installed pattern manifest.
 n = 128;                     % Logical pattern size: n x n
 q = 7;                       % DMD micromirrors per logical pixel
 dmdResolution = [1080 1920]; % Full DMD frame: [rows columns]
@@ -166,7 +166,7 @@ writetable(patternManifest, fullfile(activeFolder, 'pattern_manifest.csv'));
 
 % The installed experimental manifest at data/pattern_manifest.csv is intentionally
 % NOT modified here. This prevents a pre-acquisition pattern-generation run
-% from replacing the manifest that accompanies the published detector data.
+% from replacing the manifest that accompanies the installed detector data.
 % For a new acquisition, use the manifest saved in activeFolder and install it
 % explicitly with that new dataset only after verifying its acquisition order.
 

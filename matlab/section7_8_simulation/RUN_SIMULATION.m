@@ -5,7 +5,7 @@
 % External solvers are installed with:
 %   INSTALL_EXTERNAL_DEPENDENCIES.m
 %
-% Frozen tutorial figures are reproduced separately with:
+% Reference tutorial figures are reproduced separately with:
 %   REPRODUCE_TUTORIAL_RESULTS.m
 
 clear;
