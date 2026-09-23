@@ -16,12 +16,12 @@ For reference tutorial-result reproduction or a new Direct + TVAL3 simulation, n
 CHECK_INSTALLATION
 ```
 
-For the complete five-method simulation, download the repository ZIPs for:
+For the complete five-method simulation, obtain these two ZIP files:
 
-- L1-Magic: https://github.com/scgt/l1magic
-- FDRI-single-pixel-imaging: https://github.com/KMCzajkowski/FDRI-single-pixel-imaging
+- **L1-Magic 1.11:** official project page: https://candes.su.domains/software/l1magic/ ; direct official ZIP: https://candes.su.domains/software/l1magic/downloads/l1magic-1.11.zip. An optional GitHub mirror is available at https://github.com/scgt/l1magic.
+- **FDRI-single-pixel-imaging:** official project page: https://www.igf.fuw.edu.pl/fdri. That page states that the code was moved to https://github.com/KMCzajkowski/FDRI-single-pixel-imaging; use **Code → Download ZIP** on the GitHub repository.
 
-On each repository page choose **Code → Download ZIP** and keep the downloads as ZIP files. Then run:
+Keep both downloads as ZIP files. Then run:
 
 ```matlab
 INSTALL_EXTERNAL_DEPENDENCIES

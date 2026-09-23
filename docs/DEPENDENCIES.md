@@ -23,21 +23,33 @@ TVAL3 remains outside the BSD-3-Clause scope of the original tutorial code. See 
 
 ## L1-Magic — reader installed for the complete Sections 7–8 simulation
 
-Repository:
+Official project page:
+
+https://candes.su.domains/software/l1magic/
+
+Official L1-Magic 1.11 ZIP:
+
+https://candes.su.domains/software/l1magic/downloads/l1magic-1.11.zip
+
+Optional GitHub mirror:
 
 https://github.com/scgt/l1magic
 
-Download with **Code → Download ZIP**. Keep the ZIP compressed and select it when `INSTALL_EXTERNAL_DEPENDENCIES` asks for the L1-Magic archive.
+Keep the downloaded ZIP compressed and select it when `INSTALL_EXTERNAL_DEPENDENCIES` asks for the L1-Magic archive.
 
 L1-Magic is used for the DCT-l1 and TV-QC stages. It is not required for reference-result reproduction, Direct + TVAL3 simulation, or Section 9.
 
 ## FDRI — reader installed for the complete Sections 7–8 simulation
 
-Repository:
+Official University of Warsaw project page:
+
+https://www.igf.fuw.edu.pl/fdri
+
+The project page states that the FDRI code was moved to:
 
 https://github.com/KMCzajkowski/FDRI-single-pixel-imaging
 
-Download with **Code → Download ZIP**. Keep the ZIP compressed and select it when `INSTALL_EXTERNAL_DEPENDENCIES` asks for the FDRI archive.
+Use **Code → Download ZIP** on that repository. Keep the ZIP compressed and select it when `INSTALL_EXTERNAL_DEPENDENCIES` asks for the FDRI archive.
 
 FDRI is used only for the FDRI stage of the complete Sections 7–8 simulation. It is not required for reference-result reproduction, Direct + TVAL3 simulation, or Section 9.
 

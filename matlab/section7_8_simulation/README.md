@@ -53,12 +53,12 @@ New-run numerical files are written under `results/` and summary figures are wri
 
 The five-method simulation uses Direct, FDRI, DCT-l1, TVAL3, and TV-QC. TVAL3 is already supplied under `third_party/`. L1-Magic and FDRI must be downloaded by the reader.
 
-Download the repository ZIPs from:
+Download the dependency ZIPs from:
 
-- **L1-Magic:** https://github.com/scgt/l1magic
-- **FDRI-single-pixel-imaging:** https://github.com/KMCzajkowski/FDRI-single-pixel-imaging
+- **L1-Magic 1.11:** official site https://candes.su.domains/software/l1magic/; direct official ZIP https://candes.su.domains/software/l1magic/downloads/l1magic-1.11.zip. The GitHub copy https://github.com/scgt/l1magic is an optional mirror.
+- **FDRI-single-pixel-imaging:** official project page https://www.igf.fuw.edu.pl/fdri. That page points readers to https://github.com/KMCzajkowski/FDRI-single-pixel-imaging; use **Code → Download ZIP** on the GitHub repository.
 
-On each GitHub page choose **Code → Download ZIP**. Keep the downloaded ZIP files compressed.
+Keep the downloaded ZIP files compressed.
 
 Then run:
 
@@ -72,8 +72,8 @@ For a complete five-method run, `CHECK_INSTALLATION` should report:
 
 ```text
 TVAL3: available
-L1-Magic: available
-FDRI: available
+L1-Magic: installed; TV-QC compatibility patch present
+FDRI: installed
 Full five-method simulation: READY
 ```
 

@@ -4,15 +4,17 @@ This folder intentionally contains no downloaded L1-Magic or FDRI source code in
 
 The dependencies are needed only for the **full five-method simulation**. They are not required to reproduce the reference tutorial figures, and Direct + TVAL3 can run without them.
 
-## Download the two repository ZIPs
+## Download the two dependency ZIPs
 
-1. **L1-Magic**
-   - https://github.com/scgt/l1magic
+1. **L1-Magic 1.11**
+   - Official project page: https://candes.su.domains/software/l1magic/
+   - Direct official ZIP: https://candes.su.domains/software/l1magic/downloads/l1magic-1.11.zip
+   - Optional GitHub mirror: https://github.com/scgt/l1magic
 
 2. **FDRI-single-pixel-imaging**
-   - https://github.com/KMCzajkowski/FDRI-single-pixel-imaging
-
-On each GitHub page choose **Code → Download ZIP**.
+   - Official project page: https://www.igf.fuw.edu.pl/fdri
+   - Current code repository referenced by that page: https://github.com/KMCzajkowski/FDRI-single-pixel-imaging
+   - On GitHub choose **Code → Download ZIP**.
 
 Keep the downloaded files as ZIPs. **Do not extract them manually.**
 

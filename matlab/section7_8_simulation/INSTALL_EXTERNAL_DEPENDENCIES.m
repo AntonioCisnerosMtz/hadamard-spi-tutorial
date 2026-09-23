@@ -2,15 +2,20 @@
 %
 % This reader-facing installer does NOT use any internal project package.
 %
-% Download the repository ZIPs in your browser first:
+% Download the dependency ZIPs in your browser first:
 %
-% L1-Magic public mirror:
+% L1-Magic 1.11 official site:
+%   https://candes.su.domains/software/l1magic/
+% Direct official ZIP:
+%   https://candes.su.domains/software/l1magic/downloads/l1magic-1.11.zip
+% Optional GitHub mirror:
 %   https://github.com/scgt/l1magic
 %
-% FDRI:
+% FDRI official project page:
+%   https://www.igf.fuw.edu.pl/fdri
+% Current code repository referenced by that page:
 %   https://github.com/KMCzajkowski/FDRI-single-pixel-imaging
-%
-% On GitHub, choose Code -> Download ZIP.
+% On GitHub, choose Code -> Download ZIP for FDRI.
 %
 % Then run this script and select the two ZIP files when requested.
 %

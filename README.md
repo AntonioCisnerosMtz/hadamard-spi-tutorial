@@ -35,10 +35,10 @@ TVAL3 beta 2.4 is included. If L1-Magic or FDRI is not installed, the scripts sk
 
 ### Run all five methods
 
-The five methods are Direct, FDRI, DCT-l1, TVAL3, and TV-QC. Download these two repositories using **Code → Download ZIP**:
+The five methods are Direct, FDRI, DCT-l1, TVAL3, and TV-QC.
 
-- [L1-Magic](https://github.com/scgt/l1magic)
-- [FDRI](https://github.com/KMCzajkowski/FDRI-single-pixel-imaging)
+- **L1-Magic 1.11:** download the ZIP from the [official L1-Magic site](https://candes.su.domains/software/l1magic/) ([direct official ZIP](https://candes.su.domains/software/l1magic/downloads/l1magic-1.11.zip)). The [GitHub copy](https://github.com/scgt/l1magic) is an optional mirror.
+- **FDRI:** the [official University of Warsaw project page](https://www.igf.fuw.edu.pl/fdri) states that the code was moved to the current [FDRI GitHub repository](https://github.com/KMCzajkowski/FDRI-single-pixel-imaging). Download that repository with **Code → Download ZIP**.
 
 Keep both ZIP files compressed. Then run:
 
