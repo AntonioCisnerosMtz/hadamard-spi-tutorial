@@ -1,0 +1,16 @@
+version = 1
+
+[[annotations]]
+path = "**"
+precedence = "closest"
+SPDX-FileCopyrightText = "2026 José Antonio Cisneros-Martínez and Rubén Ramos-García"
+SPDX-License-Identifier = "BSD-3-Clause"
+
+[[annotations]]
+path = [
+  "matlab/section7_8_simulation/third_party/TVAL3_beta2.4/**",
+  "matlab/section9_pipeline/third_party/TVAL3_beta2.4/**",
+]
+precedence = "override"
+SPDX-FileCopyrightText = "2009 Chengbo Li and Yin Zhang"
+SPDX-License-Identifier = "LicenseRef-TVAL3-GPL-Unversioned"

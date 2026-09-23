@@ -4,9 +4,9 @@ This repository contains code under more than one license.
 
 ## Original tutorial code
 
-Unless a file is located under a `third_party/` directory or explicitly
-states otherwise, the original code and documentation prepared for this
-repository are released under the **BSD 3-Clause License**.
+Unless a file is located under one of the bundled TVAL3 directories or explicitly
+states otherwise, the original code and documentation prepared for this repository
+are released under the **BSD 3-Clause License**.
 
 The complete BSD 3-Clause text is provided in the root `LICENSE` file and in
 `LICENSES/BSD-3-Clause.txt`.
@@ -30,12 +30,18 @@ The preserved upstream TVAL3 notice states that TVAL3 may be redistributed
 and/or modified under the **GNU General Public License as published by the Free
 Software Foundation**, but it does not state a version number.
 
-To preserve that upstream situation without assigning a version that the
-TVAL3 authors did not state, the repository keeps the upstream notice and the
-published GPL version 1, version 2, and version 3 texts under `LICENSES/`.
+For machine-readable per-file license scope, `REUSE.toml` assigns both TVAL3
+directories to:
 
-See `LICENSES/TVAL3_LICENSE_INFO.md` and `THIRD_PARTY_NOTICES.md` for
-the source and license scope.
+```text
+LicenseRef-TVAL3-GPL-Unversioned
+```
+
+The corresponding preserved notice is in
+`LICENSES/LicenseRef-TVAL3-GPL-Unversioned.txt`.
+
+See `docs/licensing/TVAL3_LICENSE_INFO.md` and `THIRD_PARTY_NOTICES.md` for
+the source and license treatment.
 
 ## L1-Magic and FDRI
 
@@ -50,7 +56,13 @@ Downloaded dependency files are excluded from version control.
 
 ## Companion data record
 
-The experimental detector-data record is a separate download and
-is intended for release under **Creative Commons Attribution 4.0 International
-(CC BY 4.0)**. Its license notice is contained in that record rather than in
-this software repository.
+The experimental detector-data record is a separate download and is intended
+for release under **Creative Commons Attribution 4.0 International (CC BY 4.0)**.
+Its license notice is contained in that record rather than in this software
+repository.
+
+## Machine-readable file scope
+
+`REUSE.toml` is the authoritative machine-readable map from repository paths to
+licenses. It distinguishes the author-owned BSD-3-Clause files from the two
+bundled TVAL3 directories.

@@ -150,7 +150,9 @@ The v1.2.0 scripts were tested on a fresh installation with MATLAB R2026a on Win
 
 ## License and citation
 
-Original code and documentation use the **BSD 3-Clause License**. TVAL3 has its own license. L1-Magic and FDRI are downloaded separately. See [License scope](LICENSE_SCOPE.md) and [Third-party notices](THIRD_PARTY_NOTICES.md).
+Original code and documentation use the **BSD 3-Clause License**. Bundled TVAL3 has its own upstream license notice. L1-Magic and FDRI are downloaded separately.
+
+Human-readable license scope is described in [LICENSE_SCOPE.md](LICENSE_SCOPE.md) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Per-file machine-readable license scope is declared in [REUSE.toml](REUSE.toml).
 
 Software citation details are in [CITATION.cff](CITATION.cff). The earlier software DOIs are `10.5281/zenodo.22133874` (v1.1.0) and `10.5281/zenodo.22070980` (v1.0.0).
 

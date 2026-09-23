@@ -2,12 +2,12 @@
 
 ## TVAL3 beta 2.4
 
-The Sections 7–8 simulations and Section 9 analysis
-use **TVAL3 beta 2.4**, originally by Chengbo Li and Yin Zhang (Rice
-University), with Wotao Yin also identified in the preserved solver
-documentation.
+The Sections 7–8 simulations and Section 9 analysis use **TVAL3 beta 2.4**,
+originally by Chengbo Li and Yin Zhang (Rice University), with Wotao Yin also
+identified in the preserved solver documentation.
 
-Each section includes its own copy of the same solver source so it can run independently:
+Each section includes its own copy of the same solver source so it can run
+independently:
 
 ```text
 matlab/section7_8_simulation/third_party/TVAL3_beta2.4/
@@ -19,12 +19,20 @@ License that applies to the original tutorial code**.
 
 The preserved upstream `Solver/readme.txt` states that TVAL3 may be
 redistributed and/or modified under the **GNU General Public License as
-published by the Free Software Foundation**. The upstream notice does not
-state a GPL version number.
+published by the Free Software Foundation**. The upstream notice does not state
+a GPL version number.
 
-See `LICENSES/TVAL3_UPSTREAM_NOTICE.txt` and
-`LICENSES/TVAL3_LICENSE_INFO.md` for the preserved notice and license
-treatment.
+For machine-readable file-level license scope, both TVAL3 directories are
+identified in `REUSE.toml` as:
+
+```text
+LicenseRef-TVAL3-GPL-Unversioned
+```
+
+The preserved upstream licensing notice is stored in
+`LICENSES/LicenseRef-TVAL3-GPL-Unversioned.txt`.
+
+See `docs/licensing/TVAL3_LICENSE_INFO.md` for the license treatment.
 
 ## L1-Magic
 
