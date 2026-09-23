@@ -126,7 +126,7 @@ S08  RMSE / NRMSE / PSNR / SSIM / error maps
 
 The code favors readable, sequential implementations that mirror the tutorial equations.
 
-## Frozen reproduction vs new simulation
+## Reference-result reproduction vs new simulation
 
 `REPRODUCE_TUTORIAL_RESULTS.m` regenerates the tutorial figures from the included reference numerical results. It does not rerun the reconstruction algorithms.
 

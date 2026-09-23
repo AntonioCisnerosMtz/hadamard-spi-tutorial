@@ -38,7 +38,7 @@ else
     fprintf('Tutorial image cameraman.tif: not found (custom-image mode still possible)\n');
 end
 
-%% Frozen reproduction requires no external solver
+%% Reference-result reproduction requires no external solver
 frozenReady = ...
     exist(fullfile(config.frozenResultsFolder, ...
         'reference_and_selected_reconstructions.mat'), 'file') == 2 && ...
@@ -48,9 +48,9 @@ frozenReady = ...
         'timing_ranges_figure14.csv'), 'file') == 2;
 
 if frozenReady
-    fprintf('Frozen tutorial results: available\n');
+    fprintf('Reference tutorial results: available\n');
 else
-    fprintf('Frozen tutorial results: MISSING\n');
+    fprintf('Reference tutorial results: MISSING\n');
 end
 
 %% TVAL3 is bundled with its preserved upstream license notice
@@ -106,9 +106,9 @@ end
 fprintf('\n');
 
 if frozenReady
-    fprintf('Frozen tutorial reproduction: READY\n');
+    fprintf('Reference tutorial reproduction: READY\n');
 else
-    fprintf('Frozen tutorial reproduction: NOT READY\n');
+    fprintf('Reference tutorial reproduction: NOT READY\n');
 end
 
 if simulationCoreReady && tval3Ready && l1Ready && fdriReady

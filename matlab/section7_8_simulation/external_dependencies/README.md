@@ -2,7 +2,7 @@
 
 This folder intentionally contains no downloaded L1-Magic or FDRI source code in the repository.
 
-The dependencies are needed only for the **full five-method simulation**. They are not required to reproduce the frozen tutorial figures, and Direct + TVAL3 can run without them.
+The dependencies are needed only for the **full five-method simulation**. They are not required to reproduce the reference tutorial figures, and Direct + TVAL3 can run without them.
 
 ## Download the two repository ZIPs
 
@@ -35,8 +35,8 @@ CHECK_INSTALLATION
 A complete installation should report:
 
 ```text
-L1-Magic: available
-FDRI: available
+L1-Magic: installed; TV-QC compatibility patch present
+FDRI: installed
 Full five-method simulation: READY
 ```
 

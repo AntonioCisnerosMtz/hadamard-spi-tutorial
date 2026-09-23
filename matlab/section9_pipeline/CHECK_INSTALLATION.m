@@ -51,13 +51,13 @@ if manifestOK
         manifestOK = false;
     end
 end
-fprintf('%-38s %s\n', 'Published pattern manifest', passfail(manifestOK));
+fprintf('%-38s %s\n', 'Installed pattern manifest', passfail(manifestOK));
 allPassed = allPassed && manifestOK;
 
-% Three published raw signal pairs
-publishedDatasets = ["paw_print", "USAF", "logo"];
-for k = 1:numel(publishedDatasets)
-    d = publishedDatasets(k);
+% Three companion raw signal pairs
+availableDatasets = ["paw_print", "USAF", "logo"];
+for k = 1:numel(availableDatasets)
+    d = availableDatasets(k);
     rawFolder = fullfile(scriptFolder, 'raw', char(d));
     pos = dir(fullfile(rawFolder, '*_pos_*_F.txt'));
     neg = dir(fullfile(rawFolder, '*_neg_*_F.txt'));

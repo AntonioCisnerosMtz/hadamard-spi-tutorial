@@ -4,7 +4,7 @@ function S06_reconstruct_tval3()
 % enforcing agreement with the measured Hadamard coefficients.
 %
 % The release configuration uses isotropic TV and nonnegative images. The
-% complete option set below is fixed to reproduce the revised tutorial
+% complete option set below is fixed to reproduce the tutorial
 % benchmark; it is not a universal tuning recommendation.
 
 config = section7_8_config();
@@ -27,7 +27,7 @@ n = double(data.n);
 N = double(data.N);
 ordering = data.ordering;
 
-%% TVAL3 settings used for the revised tutorial benchmark
+%% TVAL3 settings used for the tutorial benchmark
 options = struct();
 options.mu         = 256;
 options.beta       = 32;

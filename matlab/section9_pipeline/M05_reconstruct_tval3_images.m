@@ -46,7 +46,7 @@ gcssLinearIndex = sub2ind([n n], u, v);
 assert(isequal(sort(gcssLinearIndex), (1:N).'), 'The GCS+S coordinates must visit every coefficient exactly once.');
 Hseq = sequency_hadamard(n);
 
-%% TVAL3 settings used for the revised tutorial results
+%% TVAL3 settings used for the tutorial results
 options = struct();
 options.mu         = 256;
 options.beta       = 32;

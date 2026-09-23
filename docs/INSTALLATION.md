@@ -10,7 +10,7 @@ Open MATLAB in:
 matlab/section7_8_simulation/
 ```
 
-For frozen tutorial-result reproduction or a new Direct + TVAL3 simulation, no external solver download is required. Run:
+For reference tutorial-result reproduction or a new Direct + TVAL3 simulation, no external solver download is required. Run:
 
 ```matlab
 CHECK_INSTALLATION
@@ -56,7 +56,7 @@ reference_figures/paw_print/
 
 The reference folders are read-only checkpoints supplied by the companion dataset. Reader-generated outputs go to `results/` and `figures/`.
 
-To reproduce the manuscript case, keep:
+To reproduce the Section 9 worked example, keep:
 
 ```matlab
 selectedDataset = "paw_print";

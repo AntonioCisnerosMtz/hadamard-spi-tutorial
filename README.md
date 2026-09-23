@@ -52,8 +52,8 @@ Before the complete five-method simulation, `CHECK_INSTALLATION` should report:
 
 ```text
 TVAL3: available
-L1-Magic: available
-FDRI: available
+L1-Magic: installed; TV-QC compatibility patch present
+FDRI: installed
 Full five-method simulation: READY
 ```
 

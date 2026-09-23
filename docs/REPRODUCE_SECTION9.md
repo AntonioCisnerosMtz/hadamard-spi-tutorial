@@ -43,7 +43,7 @@ Resolve any `FAIL` entry before continuing. The final line must report:
 Installation ready.
 ```
 
-## 4. Select the manuscript dataset
+## 4. Select the Section 9 worked example
 
 In the **User settings** section of `RUN_SECTION9_ANALYSIS.m`, keep:
 
@@ -52,7 +52,7 @@ selectedDataset = "paw_print";
 generateFigures = true;
 ```
 
-Valid dataset values are `"paw_print"`, `"USAF"`, and `"logo"`. `paw_print` is the Section 9 manuscript case.
+Valid dataset values are `"paw_print"`, `"USAF"`, and `"logo"`. `paw_print` is the Section 9 worked example.
 
 ## 5. Run the complete analysis
 

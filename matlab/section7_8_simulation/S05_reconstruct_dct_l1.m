@@ -130,7 +130,7 @@ for r = 1:numRatios
     %% Step 5 - Solve the l1-constrained reconstruction
     % L1-Magic prints every Newton/CG iteration. Capture that verbose output
     % so the normal tutorial run remains readable while the full solver log
-    % is still preserved for auditing.
+    % is still saved for later inspection.
     solverTimer = tic;
 
     [solverConsoleText, alphaHat] = evalc( ...

@@ -1,5 +1,5 @@
 function [metrics, absoluteErrorMap, evaluationSpace] = compute_quality_metrics(imageRaw, referenceRaw)
-%COMPUTE_QUALITY_METRICS Compute the validated Section 9 image metrics.
+%COMPUTE_QUALITY_METRICS Compute the Section 9 image metrics.
 %
 % The affine evaluation scale is defined only by the internal reference and
 % is then applied unchanged to the reconstruction being evaluated. No

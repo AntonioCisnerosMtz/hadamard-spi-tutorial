@@ -7,4 +7,4 @@ error maps, and iterative-solver logs.
 The generated files should not be committed. This README is kept only to
 explain the output location.
 
-Frozen tutorial results are stored separately under `frozen_results/`.
+Reference tutorial results are stored separately under `frozen_results/`.

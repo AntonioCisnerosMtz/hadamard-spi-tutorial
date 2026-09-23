@@ -13,7 +13,7 @@ The normal entry point is `RUN_SECTION9_ANALYSIS.m`. It runs M02–M06 automatic
 5. Run `RUN_SECTION9_ANALYSIS`.
 6. Inspect `results/paw_print/` and `figures/paw_print/`.
 
-`paw_print` is the manuscript reference case. `USAF` and `logo` are additional examples that use the same processing steps.
+`paw_print` is the Section 9 worked example. `USAF` and `logo` are additional examples that use the same processing steps.
 
 ## 1. Install the companion dataset
 
@@ -67,7 +67,7 @@ Open MATLAB with this directory as the current folder and run:
 CHECK_INSTALLATION
 ```
 
-A ready installation reports PASS for MATLAB/toolbox checks, bundled TVAL3, the published pattern manifest, and all three raw positive/complementary record pairs. The final line should be:
+A ready installation reports PASS for MATLAB/toolbox checks, bundled TVAL3, the installed pattern manifest, and all three raw positive/complementary record pairs. The final line should be:
 
 ```text
 Installation ready.
@@ -88,11 +88,11 @@ generateFigures = true;
 
 Use:
 
-- `"paw_print"` — Section 9 manuscript case and the dataset with frozen reference checkpoints;
+- `"paw_print"` — Section 9 worked example and the dataset with reference checkpoints;
 - `"USAF"` — additional experimental signal;
 - `"logo"` — additional experimental signal.
 
-Run `paw_print` first when checking manuscript reproducibility.
+Run `paw_print` first when checking tutorial reproducibility.
 
 ## 4. Run the complete Section 9 analysis
 
@@ -168,7 +168,7 @@ The same folder pattern is used for `USAF` and `logo` under their own dataset na
 
 ## 7. Reference results are read-only checkpoints
 
-The installed companion dataset keeps manuscript checkpoints under:
+The installed companion dataset keeps reference checkpoints under:
 
 ```text
 reference_results/paw_print/

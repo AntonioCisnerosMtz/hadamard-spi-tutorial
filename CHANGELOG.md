@@ -41,7 +41,7 @@ Documentation update. Simplified the installation and usage instructions. No sci
 - Initial MATLAB scripts for the Hadamard SPI tutorial.
 - Includes M01--M06, one Section 9 figure exporter, helper functions, and the
   preserved TVAL3 beta 2.4 MATLAB source required by M05.
-- Supports the three published experimental signals: `paw_print`, `USAF`, and
+- Supports the three experimental signals: `paw_print`, `USAF`, and
   `logo`.
 - Places the dataset selector in the `User settings` section of
   `RUN_SECTION9_ANALYSIS.m` and passes it explicitly to M02--M06 and figure
