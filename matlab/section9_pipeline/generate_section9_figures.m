@@ -141,11 +141,13 @@ posC = [0.075 0.090 0.900 0.220];
 ax = axes(fig,'Position',posA);
 hold(ax,'on');
 plot(ax,timeMs,rawPositive(1:rawSamplesToShow),'LineWidth',1.05, ...
-    'DisplayName','Positive record');
+    'LineStyle','-','DisplayName','Positive record');
 plot(ax,timeMs,rawComplementary(1:rawSamplesToShow),'LineWidth',1.05, ...
-    'DisplayName','Complementary record');
+    'LineStyle','-.','DisplayName','Complementary record');
 hold(ax,'off');
 grid(ax,'on');
+xlim(ax,[timeMs(1) timeMs(end)]);
+xticks(ax,0:5:40);
 set(ax,'FontName',fontName,'FontSize',signalAxesFontSize,'LineWidth',0.8,'TickDir','out');
 ylabel(ax,'Voltage (V)','FontSize',signalYLabelFontSize);
 xlabel(ax,'Time from record start (ms)','FontSize',signalAxesFontSize);
@@ -161,12 +163,17 @@ hold(ax,'on');
 bucketColors = lines(2);
 bucketVectors = {yPositive,yComplementary};
 bucketNames = {'$y^{(+)}$','$y^{(-)}$'};
+bucketStyles = {'-','-.'};
+bucketMarkers = {'o','s'};
+bucketMarkerIndices = 1000:1000:N;
 markerInset = 0.012 * diff(bucketDisplayLimits);
 for p = 1:2
     y = bucketVectors{p};
     yDisplay = min(max(y,bucketDisplayLimits(1)),bucketDisplayLimits(2));
     plot(ax,1:N,yDisplay,'LineWidth',0.90,'Color',bucketColors(p,:), ...
-        'DisplayName',bucketNames{p});
+        'LineStyle',bucketStyles{p},'Marker',bucketMarkers{p}, ...
+        'MarkerIndices',bucketMarkerIndices,'MarkerSize',3.0, ...
+        'MarkerFaceColor','none','DisplayName',bucketNames{p});
     yline(ax,bucketMeans(p),'--','LineWidth',1.00,'Color',bucketColors(p,:), ...
         'HandleVisibility','off');
     above = find(y > bucketDisplayLimits(2));
@@ -456,9 +463,9 @@ end
 % NRMSE reflects numerical/amplitude disagreement with the common internal
 % reference, while SSIM emphasizes structural agreement.
 %
-% Color identifies the measurement-vector path. Line style identifies the
-% reconstruction method. All six curves therefore appear together in each
-% metric panel.
+% Marker shape and color identify the measurement-vector path. Line style
+% identifies the reconstruction method. This redundant encoding keeps all
+% six curves identifiable when color is unavailable.
 fig = figure('Name','Section 9 quality comparison', ...
     'Color','w','Position',[80 100 1180 500]);
 tl = tiledlayout(fig,1,2,'TileSpacing','compact','Padding','compact');
@@ -466,7 +473,9 @@ tl = tiledlayout(fig,1,2,'TileSpacing','compact','Padding','compact');
 colors = lines(3);
 methodNames = ["Direct","TVAL3"];
 lineStyles = {'-','--'};
-markers = {'o','s'};
+measurementMarkers = {'o','s','^'};
+measurementLabels = {'$y^{\mathrm{diff}}$','$y^{\mathrm{ref}}$','$y^{\mathrm{avg}}$'};
+legendHandles = gobjects(3,2);
 metricNames = {'nrmse_relative_l2','ssim'};
 metricLabels = {'NRMSE','SSIM'};
 
@@ -483,13 +492,17 @@ for q = 1:2
             [x, order] = sort(x);
             y = y(order);
 
-            plot(ax,x,y, ...
+            h = plot(ax,x,y, ...
                 'Color',colors(t,:), ...
                 'LineStyle',lineStyles{m}, ...
-                'Marker',markers{m}, ...
+                'Marker',measurementMarkers{t}, ...
+                'MarkerFaceColor','none', ...
                 'LineWidth',1.60, ...
-                'MarkerSize',4.6, ...
-                'DisplayName',sprintf('%s - %s',orderedTypes(t),methodNames(m)));
+                'MarkerSize',4.8, ...
+                'DisplayName',[measurementLabels{t} ', ' char(methodNames(m))]);
+            if q == 2
+                legendHandles(t,m) = h;
+            end
         end
     end
 
@@ -525,10 +538,22 @@ for q = 1:2
             lowerLimit = 0;
         end
         ylim(ax,[lowerLimit 1]);
-        lgd = legend(ax,'Location','southoutside','NumColumns',2, ...
+        legendOrder = [legendHandles(:,1); legendHandles(:,2)];
+        legendText = cell(6,1);
+        k = 0;
+        for m = 1:numel(methodNames)
+            for t = 1:numel(orderedTypes)
+                k = k + 1;
+                legendText{k} = [measurementLabels{t} ', ' char(methodNames(m))];
+            end
+        end
+        lgd = legend(ax,legendOrder,legendText,'Location','southoutside', ...
+            'NumColumns',2,'Interpreter','latex', ...
             'FontName',fontName,'FontSize',qualityLegendFontSize);
-        % Use the tiled-layout south region so the shared six-entry legend is
-        % centered beneath both metric panels instead of under panel (b) only.
+        % The first legend column contains Direct and the second TVAL3, so
+        % each row pairs the two methods for one measurement vector.
+        % Use the tiled-layout south region so the shared legend is centered
+        % beneath both metric panels instead of under panel (b) only.
         lgd.Layout.Tile = 'south';
     end
 end
