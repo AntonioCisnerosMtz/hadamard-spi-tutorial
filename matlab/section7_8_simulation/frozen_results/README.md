@@ -1,11 +1,13 @@
-# Frozen revised tutorial results
+# Reference tutorial results
 
-These files reproduce the numerical content of the revised Sections 7–8 results without rerunning external reconstruction solvers.
+These files contain the reference numerical results used to reproduce the Sections 7–8 tutorial figures without rerunning external reconstruction solvers.
 
-Run `REPRODUCE_TUTORIAL_RESULTS.m`.
+Run:
 
-The frozen package contains the reference image and selected validated full-rerun reconstructions, the revised metric table used for Figure 15, and the revised timing ranges used for Figure 14.
+```matlab
+REPRODUCE_TUTORIAL_RESULTS
+```
 
-The v1.1.0 results remain available in that release.
+The package contains the reference image and selected reconstructions, the metric table used for Figure 15, and the timing ranges used for Figure 14.
 
-The source paths saved in `timing_ranges_figure14.csv` record the original folder name. The benchmark file is now at `validation/sections7_8/benchmark_summary.csv` from the repository root. The timing table is unchanged.
+The source paths stored in `timing_ranges_figure14.csv` point to the corresponding timing summary at `validation/sections7_8/benchmark_summary.csv` from the repository root.

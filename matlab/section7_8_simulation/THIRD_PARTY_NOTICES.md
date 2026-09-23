@@ -15,7 +15,7 @@ presence does not relabel TVAL3 as GPL-2.0-only.
 
 TVAL3 is third-party software and is not covered by the license used for the
 tutorial's original MATLAB code. See the repository-level
-`LICENSES/TVAL3_LICENSE_INFO.md` for the license details and source.
+`docs/licensing/TVAL3_LICENSE_INFO.md` for license details and source.
 
 ## L1-Magic
 
@@ -25,7 +25,7 @@ runtime files locally with `INSTALL_EXTERNAL_DEPENDENCIES.m`.
 
 ## FDRI
 
-FDRI is **not bundled** in this reader package. Readers supply the
-ZIP downloaded from the public FDRI repository. The installer preserves the
-upstream `private/fdri.m` locally and creates only the thin tutorial wrapper
-needed by MATLAB's `private/` visibility rule.
+FDRI is **not bundled** in this reader package. Readers supply the ZIP downloaded
+from the public FDRI repository. The installer preserves the upstream
+`private/fdri.m` locally and creates only the thin tutorial wrapper needed by
+MATLAB's `private/` visibility rule.

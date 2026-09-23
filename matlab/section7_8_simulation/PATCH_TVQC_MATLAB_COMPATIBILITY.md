@@ -9,7 +9,7 @@ Recent MATLAB releases can resolve this shared identifier as a variable in the
 parent function, causing the large-scale function-handle call to fail.
 
 `INSTALL_EXTERNAL_DEPENDENCIES.m` applies the same narrow compatibility patch
-used by the validated tutorial benchmark:
+used by the tutorial benchmark:
 
 - local helper `H11p(...)` -> `applyH11p(...)`;
 - small-scale Hessian variable `H11p` -> `H11pMatrix`.

@@ -1,12 +1,11 @@
-# Numerical checks
+# Reference diagnostics
 
-These files record numerical checks for v1.2.0. Their contents are unchanged in v1.2.1.
+This directory contains numerical diagnostics associated with the tutorial reference calculations.
 
-- `sections7_8/benchmark_summary.csv`: simulation timing measurements.
-- `sections7_8/solver_diagnostics.csv`: solver stopping information.
-- `sections7_8/comparison_summary.json`: counts of result rows.
-- `section9/paw_print_tval3_solver_diagnostics.csv`: TVAL3 stopping information for `paw_print`.
-- `section9/TVAL3_OPTIONS.txt`: the TVAL3 option values used for the saved results.
-- `section9/STAGE1D_EXECUTION_SUMMARY.txt`: solve counts, stopping causes, and the measurement-vector checksum.
+- `sections7_8/benchmark_summary.csv`: reconstruction timing measurements used for the Sections 7–8 timing summary.
+- `sections7_8/solver_diagnostics.csv`: iterative-solver stopping information for the Sections 7–8 calculations.
+- `section9/paw_print_tval3_solver_diagnostics.csv`: TVAL3 stopping information for the `paw_print` Section 9 example.
+- `section9/TVAL3_OPTIONS.txt`: TVAL3 option values used for the Section 9 reference calculations.
+- `section9/reference_run_summary.txt`: solve counts, stopping causes, and the measurement-vector checksum associated with the reference run.
 
-The source paths stored in the frozen Figure 14 timing table use the folder name from the original run. Its benchmark file is now `validation/sections7_8/benchmark_summary.csv`. The table itself is preserved byte for byte.
+These files are provided to help readers compare a new run with the supplied reference calculations. Timing values can vary across computers.
