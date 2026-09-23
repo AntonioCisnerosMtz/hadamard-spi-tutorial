@@ -20,8 +20,8 @@ if nargin < 1 || strlength(string(selectedDataset)) == 0
 end
 selectedDataset = string(selectedDataset);
 
-%% Published processing settings
-% Keep these values unchanged to reproduce the released detector records.
+%% Tutorial processing settings
+% Keep these values unchanged to process the companion detector records.
 % Change them only when adapting the code to a different acquisition.
 N = 16384;                   % Number of signed Hadamard patterns: N = n^2
 fs_Hz = 100000;              % Detector sampling frequency in hertz

@@ -1,16 +1,18 @@
 # Figures
 
-The four tutorial-result reproductions are included under:
+Reference-result reproductions are generated under:
 
 ```text
 tutorial_reproduction/
 ```
 
-They can be regenerated at any time with:
+Run:
 
 ```matlab
 REPRODUCE_TUTORIAL_RESULTS
 ```
+
+to create Figures 13–16 from the reference numerical results included with the repository.
 
 A new simulation writes generated figures under:
 
@@ -18,5 +20,4 @@ A new simulation writes generated figures under:
 simulation/
 ```
 
-The `simulation/` directory is created automatically and should not be
-committed to the repository.
+Both output directories are generated locally and should not be committed to the repository.

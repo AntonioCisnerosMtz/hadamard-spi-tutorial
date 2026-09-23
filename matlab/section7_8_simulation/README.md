@@ -138,7 +138,9 @@ The solver settings shown in S05–S07 reproduce the tutorial benchmark and are 
 
 For a different image, an iterative solver may reach its maximum iteration limit before satisfying its internal stopping criterion. S06 reports the actual stopping condition.
 
-## Included tutorial figures
+## Generated tutorial figures
+
+Running `REPRODUCE_TUTORIAL_RESULTS.m` creates:
 
 ```text
 figures/tutorial_reproduction/
@@ -148,4 +150,4 @@ figures/tutorial_reproduction/
 └── figure16_reproduced.png
 ```
 
-Readers can view these immediately or regenerate them with `REPRODUCE_TUTORIAL_RESULTS.m`.
+These generated files are intentionally not version-controlled. The repository includes the reference numerical results used to recreate them and a representative expected-output image under `docs/assets/`.

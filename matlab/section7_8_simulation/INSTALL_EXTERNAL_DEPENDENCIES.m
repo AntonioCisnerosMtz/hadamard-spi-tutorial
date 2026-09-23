@@ -1,6 +1,6 @@
 %% Install the external solver dependencies from downloaded repository ZIPs
 %
-% This reader-facing installer does NOT use any internal project package.
+% This reader-facing installer does not rely on any private dependency package.
 %
 % Download the dependency ZIPs in your browser first:
 %

@@ -1,5 +1,5 @@
 function config = section9_config(selectedDataset)
-%SECTION9_CONFIG Resolve paths for one published experimental dataset.
+%SECTION9_CONFIG Resolve paths for one installed companion experimental dataset.
 %
 % The normal reader interface is RUN_SECTION9_ANALYSIS.m, where the dataset
 % is selected in the User settings section. Direct calls are also supported:
@@ -8,7 +8,7 @@ function config = section9_config(selectedDataset)
 %   section9_config("logo")
 %
 % If no input is supplied, paw_print is used by default. The input "usaf"
-% is accepted case-insensitively and normalized to the published folder name
+% is accepted case-insensitively and normalized to the installed folder name
 % "USAF". Derived outputs are written to results/<dataset>/.
 
 %% Normalize dataset selection

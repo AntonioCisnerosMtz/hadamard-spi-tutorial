@@ -19,8 +19,8 @@ if nargin < 1 || strlength(string(selectedDataset)) == 0
 end
 selectedDataset = string(selectedDataset);
 
-%% Published sampling settings
-% Keep this grid unchanged to reproduce the released workflow. Change it
+%% Tutorial sampling settings
+% Keep this grid unchanged to reproduce the tutorial workflow. Change it
 % only when exploring a different sampling schedule.
 samplingPercents = 5:5:100;
 

@@ -1,6 +1,6 @@
 %% Reproduce the tutorial numerical results from included reference data
 % This script does NOT execute FDRI, L1-Magic, TVAL3, or any reconstruction
-% solver. It uses the frozen arrays and tables supplied with the repository.
+% solver. It uses the reference arrays and tables supplied with the repository.
 %
 % Outputs:
 %   figures/tutorial_reproduction/figure13_reproduced.png
@@ -9,7 +9,7 @@
 %   figures/tutorial_reproduction/figure16_reproduced.png
 %
 % The numerical content follows the reference results supplied with the repository. The layout is
-% reader-facing rather than a pixel-for-pixel copy of the submission artwork.
+% reader-facing rather than a pixel-for-pixel copy of the tutorial artwork.
 
 clear;
 clc;

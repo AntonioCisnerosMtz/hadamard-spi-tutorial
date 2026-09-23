@@ -312,7 +312,7 @@ metricsTable = readtable(metricsFile,'TextType','string');
 measurementTypes = string(directData.measurementTypes(:).');
 samplingPercents = double(directData.samplingPercents(:).');
 assert(isequal(samplingPercents,5:5:100), ...
-    'The Section 9 editorial figures expect the published 5:5:100 grid.');
+    'The Section 9 figures expect the 5:5:100 sampling grid.');
 assert(all(ismember(["yDiff","yRef","yAvg"],measurementTypes)), ...
     'The three Section 9 measurement formulations were not found.');
 N = double(directData.N);

@@ -10,7 +10,7 @@ The companion data record provides three dataset folders under `raw/`:
 
 Each folder contains exactly one positive record matching `*_pos_*_F.txt` and one complementary record matching `*_neg_*_F.txt`. The files are numeric detector-voltage samples stored as text. The scripts preserve the pairing and acquisition order.
 
-Do not infer undocumented acquisition settings solely from the historical filename grammar. For the manuscript `paw_print` case, use `metadata/acquisition_paw_print.json` in the companion dataset as the authoritative acquisition metadata supplied with the data record. `metadata/processing_USAF.json` and `metadata/processing_logo.json` document the released MATLAB processing parameters for those reader datasets without asserting undocumented acquisition hardware details.
+Do not infer undocumented acquisition settings solely from the historical filename grammar. For the manuscript `paw_print` case, use `metadata/acquisition_paw_print.json` in the companion dataset as the authoritative acquisition metadata supplied with the data record. `metadata/processing_USAF.json` and `metadata/processing_logo.json` document the supplied MATLAB processing parameters for those reader datasets without asserting undocumented acquisition hardware details.
 
 ## Pattern manifest
 
