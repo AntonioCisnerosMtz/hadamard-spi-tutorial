@@ -19,7 +19,7 @@ The normal entry point is `RUN_SECTION9_ANALYSIS.m`. It runs M02–M06 automatic
 
 The experimental records are intentionally distributed separately from the software package.
 
-**Reserved companion dataset DOI:** `10.5281/zenodo.22070080` — dataset publication pending.
+**Companion dataset:** version 1.0.0, Zenodo DOI **10.5281/zenodo.22070080** (https://doi.org/10.5281/zenodo.22070080).
 
 After downloading the companion dataset ZIP, extract it to a convenient location. Inside it, locate:
 
