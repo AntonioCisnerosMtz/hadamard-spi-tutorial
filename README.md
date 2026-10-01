@@ -67,9 +67,9 @@ See the [Sections 7–8 guide](matlab/section7_8_simulation/README.md) for sampl
 
 ## Section 9: experimental data
 
-The detector records are distributed separately from the software. The companion dataset is currently a Zenodo draft with reserved DOI `10.5281/zenodo.22070080`; it is not public yet.
+The detector records are distributed separately from the software. The companion dataset is publicly available on Zenodo as version 1.0.0: **https://doi.org/10.5281/zenodo.22070080**.
 
-When the companion dataset is available, extract it and copy the **contents of `payload/`**, not the outer folder itself, into:
+Download and extract the dataset, then copy the **contents of `payload/`**, not the outer folder itself, into:
 
 ```text
 matlab/section9_pipeline/
@@ -155,4 +155,4 @@ Original code and documentation are distributed under the **BSD 3-Clause License
 
 Human-readable license scope is described in [LICENSE_SCOPE.md](LICENSE_SCOPE.md) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Per-file machine-readable license scope is declared in [REUSE.toml](REUSE.toml).
 
-Software citation details are provided in [CITATION.cff](CITATION.cff). The companion dataset is intended for a separate CC BY 4.0 release.
+Software citation details are provided in [CITATION.cff](CITATION.cff). The companion experimental dataset is released separately under CC BY 4.0 at **https://doi.org/10.5281/zenodo.22070080**.
