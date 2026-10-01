@@ -4,9 +4,9 @@ Follow these steps to reproduce the `paw_print` tutorial example using a fresh s
 
 ## 1. Prepare clean software and data copies
 
-Use a fresh copy of the software package and extract the companion experimental dataset separately.
+Use a fresh copy of the software package and download the companion experimental dataset from Zenodo: **https://doi.org/10.5281/zenodo.22070080** (version 1.0.0).
 
-The software package does **not** contain the large raw detector records.
+Extract the dataset separately. The software package does **not** contain the large raw detector records.
 
 ## 2. Install the data payload
 
